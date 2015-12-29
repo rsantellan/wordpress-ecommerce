@@ -1,0 +1,10 @@
+#controls-wrapper { margin:0 auto; height:58px; width:100%; bottom:0px; left:0; z-index:4; position:fixed; }
+#controls { overflow:hidden; height:100%; position:relative; text-align:left; z-index:5; }
+#slidecaption { 
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+a#prevslide { display: none; }
+a#nextslide { position: fixed; width: 100%; height: 100%; cursor: default; z-index: 2; }

@@ -1,0 +1,487 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-02 18:14+0700\n"
+"PO-Revision-Date: 2015-07-02 18:14+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../photome-custom-post.php:25
+msgid "Add New Gallery"
+msgstr "Add New Gallery"
+
+#: ../photome-custom-post.php:26
+msgid "Edit Gallery"
+msgstr ""
+
+#: ../photome-custom-post.php:27
+msgid "New Gallery"
+msgstr ""
+
+#: ../photome-custom-post.php:28
+msgid "View Gallery"
+msgstr ""
+
+#: ../photome-custom-post.php:29
+msgid "Search Gallery"
+msgstr ""
+
+#: ../photome-custom-post.php:30
+msgid "No Gallery found"
+msgstr ""
+
+#: ../photome-custom-post.php:31
+msgid "No Gallery found in Trash"
+msgstr ""
+
+#: ../photome-custom-post.php:53
+msgid "Search Gallery Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:54
+msgid "All Gallery Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:55
+msgid "Parent Gallery Category"
+msgstr ""
+
+#: ../photome-custom-post.php:56
+msgid "Parent Gallery Category:"
+msgstr ""
+
+#: ../photome-custom-post.php:57
+msgid "Edit Gallery Category"
+msgstr ""
+
+#: ../photome-custom-post.php:58
+msgid "Update Gallery Category"
+msgstr ""
+
+#: ../photome-custom-post.php:59
+msgid "Add New Gallery Category"
+msgstr ""
+
+#: ../photome-custom-post.php:60
+msgid "New Gallery Category Name"
+msgstr ""
+
+#: ../photome-custom-post.php:85
+msgid "Add New Portfolio"
+msgstr ""
+
+#: ../photome-custom-post.php:86
+msgid "Edit Portfolio"
+msgstr ""
+
+#: ../photome-custom-post.php:87
+msgid "New Portfolio"
+msgstr ""
+
+#: ../photome-custom-post.php:88
+msgid "View Portfolio"
+msgstr ""
+
+#: ../photome-custom-post.php:89
+msgid "Search Portfolios"
+msgstr ""
+
+#: ../photome-custom-post.php:90
+msgid "No Portfolio found"
+msgstr ""
+
+#: ../photome-custom-post.php:91
+msgid "No Portfolio found in Trash"
+msgstr ""
+
+#: ../photome-custom-post.php:113
+msgid "Search Portfolio Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:114
+msgid "All Portfolio Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:115
+msgid "Parent Portfolio Category"
+msgstr ""
+
+#: ../photome-custom-post.php:116
+msgid "Parent Portfolio Category:"
+msgstr ""
+
+#: ../photome-custom-post.php:117
+msgid "Edit Portfolio Category"
+msgstr ""
+
+#: ../photome-custom-post.php:118
+msgid "Update Portfolio Category"
+msgstr ""
+
+#: ../photome-custom-post.php:119
+msgid "Add New Portfolio Category"
+msgstr ""
+
+#: ../photome-custom-post.php:120
+msgid "New Portfolio Category Name"
+msgstr ""
+
+#: ../photome-custom-post.php:145
+msgid "Add New Testimonial"
+msgstr ""
+
+#: ../photome-custom-post.php:146
+msgid "Edit Testimonial"
+msgstr ""
+
+#: ../photome-custom-post.php:147
+msgid "New Testimonial"
+msgstr ""
+
+#: ../photome-custom-post.php:148
+msgid "View Testimonial"
+msgstr ""
+
+#: ../photome-custom-post.php:149
+msgid "Search Testimonial"
+msgstr ""
+
+#: ../photome-custom-post.php:150
+msgid "No Testimonial found"
+msgstr ""
+
+#: ../photome-custom-post.php:151
+msgid "No Testimonial found in Trash"
+msgstr ""
+
+#: ../photome-custom-post.php:173
+msgid "Search Testimonial Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:174
+msgid "All Testimonial Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:175
+msgid "Parent Testimonial Category"
+msgstr ""
+
+#: ../photome-custom-post.php:176
+msgid "Parent Testimonial Category:"
+msgstr ""
+
+#: ../photome-custom-post.php:177
+msgid "Edit Testimonial Category"
+msgstr ""
+
+#: ../photome-custom-post.php:178
+msgid "Update Testimonial Category"
+msgstr ""
+
+#: ../photome-custom-post.php:179
+msgid "Add New Testimonial Category"
+msgstr ""
+
+#: ../photome-custom-post.php:180
+msgid "New Testimonial Category Name"
+msgstr ""
+
+#: ../photome-custom-post.php:205
+msgid "Add New Client"
+msgstr ""
+
+#: ../photome-custom-post.php:206
+msgid "Edit Client"
+msgstr ""
+
+#: ../photome-custom-post.php:207
+msgid "New Client"
+msgstr ""
+
+#: ../photome-custom-post.php:208
+msgid "View Client"
+msgstr ""
+
+#: ../photome-custom-post.php:209
+msgid "Search Client"
+msgstr ""
+
+#: ../photome-custom-post.php:210
+msgid "No Client found"
+msgstr ""
+
+#: ../photome-custom-post.php:211
+msgid "No Client found in Trash"
+msgstr ""
+
+#: ../photome-custom-post.php:233
+msgid "Search Client Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:234
+msgid "All Client Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:235
+msgid "Parent Client Category"
+msgstr ""
+
+#: ../photome-custom-post.php:236
+msgid "Parent Client Category:"
+msgstr ""
+
+#: ../photome-custom-post.php:237
+msgid "Edit Client Category"
+msgstr ""
+
+#: ../photome-custom-post.php:238
+msgid "Update Client Category"
+msgstr ""
+
+#: ../photome-custom-post.php:239
+msgid "Add New Client Category"
+msgstr ""
+
+#: ../photome-custom-post.php:240
+msgid "New Client Category Name"
+msgstr ""
+
+#: ../photome-custom-post.php:264
+msgid "Add New Team Member"
+msgstr ""
+
+#: ../photome-custom-post.php:265
+msgid "Edit Team Member"
+msgstr ""
+
+#: ../photome-custom-post.php:266
+msgid "New Team Member"
+msgstr ""
+
+#: ../photome-custom-post.php:267
+msgid "View Team Member"
+msgstr ""
+
+#: ../photome-custom-post.php:268
+msgid "Search Team Members"
+msgstr ""
+
+#: ../photome-custom-post.php:269
+msgid "No Team Member found"
+msgstr ""
+
+#: ../photome-custom-post.php:270
+msgid "No Team Member found in Trash"
+msgstr ""
+
+#: ../photome-custom-post.php:292
+msgid "Team Service Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:293
+msgid "All Team Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:294
+msgid "Parent Team Category"
+msgstr ""
+
+#: ../photome-custom-post.php:295
+msgid "Parent Team Category:"
+msgstr ""
+
+#: ../photome-custom-post.php:296
+msgid "Edit Team Category"
+msgstr ""
+
+#: ../photome-custom-post.php:297
+msgid "Update Team Category"
+msgstr ""
+
+#: ../photome-custom-post.php:298
+msgid "Add New Team Category"
+msgstr ""
+
+#: ../photome-custom-post.php:299
+msgid "New Team Category Name"
+msgstr ""
+
+#: ../photome-custom-post.php:323
+msgid "Add New Pricing"
+msgstr ""
+
+#: ../photome-custom-post.php:324
+msgid "Edit Pricing"
+msgstr ""
+
+#: ../photome-custom-post.php:325
+msgid "New Pricing"
+msgstr ""
+
+#: ../photome-custom-post.php:326
+msgid "View Pricing"
+msgstr ""
+
+#: ../photome-custom-post.php:327
+msgid "Search Pricings"
+msgstr ""
+
+#: ../photome-custom-post.php:328
+msgid "No Pricing found"
+msgstr ""
+
+#: ../photome-custom-post.php:329
+msgid "No Pricing found in Trash"
+msgstr ""
+
+#: ../photome-custom-post.php:351
+msgid "Pricing Service Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:352
+msgid "All Pricing Categories"
+msgstr ""
+
+#: ../photome-custom-post.php:353
+msgid "Parent Pricing Category"
+msgstr ""
+
+#: ../photome-custom-post.php:354
+msgid "Parent Pricing Category:"
+msgstr ""
+
+#: ../photome-custom-post.php:355
+msgid "Edit Pricing Category"
+msgstr ""
+
+#: ../photome-custom-post.php:356
+msgid "Update Pricing Category"
+msgstr ""
+
+#: ../photome-custom-post.php:357
+msgid "Add New Pricing Category"
+msgstr ""
+
+#: ../photome-custom-post.php:358
+msgid "New Pricing Category Name"
+msgstr ""
+
+#: ../photome-custom-post.php:379
+msgid "Thumbnail"
+msgstr ""
+
+#: ../tg-contentbuilder.php:3242 ../tg-contentbuilder.php:3270
+#: ../tg-contentbuilder.php:3297
+msgid "In"
+msgstr ""
+
+#: ../tg-contentbuilder.php:4986 ../tg-contentbuilder.php:4987
+#: ../tg-contentbuilder.php:5228 ../tg-contentbuilder.php:5229
+msgid "Name *"
+msgstr ""
+
+#: ../tg-contentbuilder.php:4994 ../tg-contentbuilder.php:4995
+#: ../tg-contentbuilder.php:5236 ../tg-contentbuilder.php:5237
+msgid "Email *"
+msgstr ""
+
+#: ../tg-contentbuilder.php:5002 ../tg-contentbuilder.php:5003
+#: ../tg-contentbuilder.php:5244 ../tg-contentbuilder.php:5245
+msgid "Message *"
+msgstr ""
+
+#: ../tg-contentbuilder.php:5010 ../tg-contentbuilder.php:5011
+#: ../tg-contentbuilder.php:5252 ../tg-contentbuilder.php:5253
+msgid "Address"
+msgstr ""
+
+#: ../tg-contentbuilder.php:5018 ../tg-contentbuilder.php:5019
+#: ../tg-contentbuilder.php:5260 ../tg-contentbuilder.php:5261
+msgid "Phone"
+msgstr ""
+
+#: ../tg-contentbuilder.php:5026 ../tg-contentbuilder.php:5027
+#: ../tg-contentbuilder.php:5268 ../tg-contentbuilder.php:5269
+msgid "Mobile"
+msgstr ""
+
+#: ../tg-contentbuilder.php:5034 ../tg-contentbuilder.php:5035
+#: ../tg-contentbuilder.php:5276 ../tg-contentbuilder.php:5277
+msgid "Company Name"
+msgstr ""
+
+#: ../tg-contentbuilder.php:5042 ../tg-contentbuilder.php:5043
+#: ../tg-contentbuilder.php:5284 ../tg-contentbuilder.php:5285
+msgid "Country"
+msgstr ""
+
+#: ../tg-contentbuilder.php:5072 ../tg-contentbuilder.php:5314
+msgid "Send"
+msgstr ""
+
+#: ../tg-shortcode.php:263
+msgid "Share On"
+msgstr ""
+
+#: ../tg-shortcode.php:757 ../tg-shortcode.php:817 ../tg-shortcode.php:2744
+msgid ""
+"Empty gallery item. Please make sure you have upload image to it or check "
+"the short code."
+msgstr ""
+
+#: ../tg-shortcode.php:1194 ../tg-shortcode.php:1471
+msgid ""
+"Empty portfolio item. Please make sure you have created portfolio item or "
+"check the short code."
+msgstr ""
+
+#: ../tg-shortcode.php:1260
+msgid "All"
+msgstr ""
+
+#: ../tg-shortcode.php:2036
+msgid "Go to top"
+msgstr ""
+
+#: ../tg-shortcode.php:2152
+msgid "Follow"
+msgstr ""
+
+#: ../gallery/tg-gallery.php:58
+msgid "Gallery Images"
+msgstr ""
+
+#: ../gallery/tg-gallery.php:100
+msgid "Allowed Files"
+msgstr ""
+
+#: ../gallery/tg-gallery.php:123
+msgid "Upload Image"
+msgstr ""
+
+#: ../gallery/tg-gallery.php:124
+msgid "Delete All Images"
+msgstr ""
+
+#: ../gallery/tg-gallery.php:131
+msgid "Remove"
+msgstr "Remove"
+
+#, fuzzy
+#~ msgid "Leave A Reply"
+#~ msgstr "Leave a Reply"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "Leave a Reply"
+
+#, fuzzy
+#~ msgid "Cancel Reply"
+#~ msgstr "Leave a Reply"

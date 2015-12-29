@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Valentina de Llano · Demi-Couture</title>
+
+<link rel="icon" href="favicon.png">
+
+<link href='https://fonts.googleapis.com/css?family=Lekton:400,700' rel='stylesheet' type='text/css'>
+
+<link href="//cloud.webtype.com/css/094b1fa9-6433-4dce-966d-931c186185d8.css" rel="stylesheet" type="text/css">
+<style>
+body { margin: 0; font-family: 'Lekton', sans-serif ; font-size:22px; color:white; text-align: center}
+
+video { 
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+
+background: url('http://valentinadellano.com/img/bg.jpg') no-repeat; background-size: cover;  -webkit-transition: 1s opacity; transition: 1s opacity; }
+div { position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+	padding: 30px;
+	text-align: center
+	
+	 }
+
+
+
+
+
+#polina button { 
+      display: block;
+    width: 70%;
+    padding: .4rem;
+    border: none;
+    margin: 1rem auto;
+    font-size: 1.3rem;
+    background: rgba(105, 105, 105, 0.23);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: .3s background;
+    transition: .3s background;
+    font-size: 16px;
+    font-family: 'Lekton', sans-serif;}
+  
+  
+  
+  #video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url('http://valentinadellano.com/img/bg.jpg') no-repeat;
+    background-size: cover;
+    -webkit-transition: 1s opacity;
+    transition: 1s opacity;
+  }
+  
+  
+  
+  
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media all and (max-device-width: 800px) {
+  body { background: url("http://valentinadellano.com/img/bg.jpg") #000 no-repeat center center fixed; background-size: cover; }
+  #bgvid, #polina button { display: none; }
+  div{width:70%;} 
+}
+</style>
+<meta charset="utf-8">
+</head>
+
+
+<body cz-shortcut-listen="true">
+<video autoplay loop poster="http://valentinadellano.com/img/bg.jpg" id="bgvid">
+<source src="http://valentinadellano.com/img/D-FORMA COLLECTION.mp4" type="video/webm">
+<source src="http://valentinadellano.com/img/D-FORMA COLLECTION.mp4" type="video/mp4">
+</video> 
+
+
+<div id="polina">
+ 
+ 
+        <img src="img/valentinadellano.png" width="335" height="83" title="Valentina de Llano · Demi-Couture" 
+        alt="Valentina de Llano · Demi-Couture" />
+       
+       
+       
+       
+       
+       </br></br></br>
+        	
+          
+          <a href="https://www.facebook.com/pages/Valentina-de-Llano/1491828647750016"
+            title="Facebook" target="_blank">
+            <img src="img/facebook.png" width="21" height="21" style="margin:10px"
+            alt="Facebook" title="Facebook" /></a>
+            
+            
+            <a href="https://instagram.com/valentinadellano/"
+            title="Instagram" target="_blank">
+            <img src="img/instagram.png" width="21" height="21"  style="margin:10px"
+            alt="Instagram" title="Instagram" /></a>
+            
+            <a href="https://twitter.com/valdellano"
+            title="Twitter" target="_blank">
+            <img src="img/twitter.png" width="21" height="21"  style="margin:10px"
+            alt="Twitter" title="Twitter" /></a>
+            
+          
+            
+            
+            
+        </br><p>coming soon</p></br>
+        
+<button>Pausar</button>
+</div>
+<script>
+var video = document.getElementById("bgvid"),
+pauseButton = document.querySelector("#polina button");
+
+function vidFade() {
+  video.classList.add("stopfade");
+}
+
+video.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+video.pause();
+vidFade();
+}, false); 
+ 
+pauseButton.addEventListener("click", function() {
+  video.classList.toggle("stopfade");
+  if (video.paused) {
+    video.play();
+    pauseButton.innerHTML = "Pausar";
+  } else {
+    video.pause();
+    pauseButton.innerHTML = "Continuar";
+  }
+}, false);
+
+video.addEventListener('touchstart', function(e) {
+e.preventDefault();
+video.play();
+})
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9896842-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<div id="window-resizer-tooltip" style="display: none;"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1539</span> x <span class="tooltipHeight" id="winHeight">953</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1539</span> x <span class="tooltipHeight" id="vpHeight">338</span></div></body></html>

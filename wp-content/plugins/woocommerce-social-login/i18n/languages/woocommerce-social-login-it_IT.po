@@ -1,0 +1,682 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Social Login\n"
+"POT-Creation-Date: 2015-01-20 09:01+0100\n"
+"PO-Revision-Date: 2015-01-20 09:01+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/abstract-wc-social-login-provider.php:133
+msgid "Enable/Disable"
+msgstr "﻿Attivazione/Disattivazione"
+
+#: includes/abstract-wc-social-login-provider.php:135
+#, php-format
+msgid "Enable %s"
+msgstr "Abilita %s"
+
+#: includes/abstract-wc-social-login-provider.php:139
+#: includes/providers/class-wc-social-login-provider-paypal.php:119
+msgid "Client ID"
+msgstr "ID Client"
+
+#: includes/abstract-wc-social-login-provider.php:141
+msgid "Your app ID"
+msgstr "﻿Il tuo app ID"
+
+#: includes/abstract-wc-social-login-provider.php:145
+msgid "Client Secret"
+msgstr "Segreto Cliente"
+
+#: includes/abstract-wc-social-login-provider.php:147
+msgid "Your app secret"
+msgstr "il segreto della tua app"
+
+#: includes/abstract-wc-social-login-provider.php:151
+msgid "Login Button Text"
+msgstr "Testo pulsante login"
+
+#: includes/abstract-wc-social-login-provider.php:153
+msgid "Controls the text displayed on the login button."
+msgstr "﻿Controlla il testo visualizzato sul pulsante di accesso."
+
+#: includes/abstract-wc-social-login-provider.php:158
+msgid "Link Button Text"
+msgstr "Testo pulsante link"
+
+#: includes/abstract-wc-social-login-provider.php:160
+msgid "Controls the text displayed on the link account button."
+msgstr "Controlla il testo mostrato sul pulsante di collegamento all'account"
+
+#: includes/abstract-wc-social-login-provider.php:392
+msgid "ERROR"
+msgstr "Errore"
+
+#: includes/abstract-wc-social-login-provider.php:392
+msgid ""
+"Couldn&#8217;t register you&hellip; please contact us if you continue to have "
+"problems."
+msgstr ""
+"﻿Non è stato possibile &#8217; registrarti &hellip; Contattaci se ha bisogno "
+"di ulteriore assistenza."
+
+#: includes/admin/class-wc-social-login-admin.php:87
+msgid "Social Registration"
+msgstr "﻿Registrazione Social"
+
+#: includes/admin/class-wc-social-login-admin.php:187
+msgid "Connected Social Profiles"
+msgstr "﻿Profili social connessi"
+
+#: includes/admin/class-wc-social-login-admin.php:190
+#: includes/admin/class-wc-social-login-admin.php:216
+msgid "Social Profiles"
+msgstr "﻿Profili social"
+
+#: includes/admin/class-wc-social-login-settings.php:45
+msgid "Social Login"
+msgstr "Login social"
+
+#: includes/admin/class-wc-social-login-settings.php:62
+#: includes/admin/class-wc-social-login-settings.php:96
+#: includes/admin/class-wc-social-login-settings.php:211
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: includes/admin/class-wc-social-login-settings.php:101
+msgid "Display Social Login buttons on:"
+msgstr "Mostra i pulsanti di social login su:"
+
+#: includes/admin/class-wc-social-login-settings.php:102
+msgid "Control where Social Login buttons are displayed."
+msgstr "﻿Controllo dove vengono visualizzati i pulsanti Social login."
+
+#: includes/admin/class-wc-social-login-settings.php:107
+msgid "Checkout"
+msgstr "Cassa"
+
+#: includes/admin/class-wc-social-login-settings.php:108
+msgid "My Account"
+msgstr "﻿Il mio account"
+
+#: includes/admin/class-wc-social-login-settings.php:109
+msgid "Checkout Notice"
+msgstr "Avviso Cassa"
+
+#: includes/admin/class-wc-social-login-settings.php:118
+msgid "Display \"Link Your Account\" button on Thank You page"
+msgstr "Mostra pulsante \"Collega il tuo Account\" su pagina di ringraziamento"
+
+#: includes/admin/class-wc-social-login-settings.php:119
+msgid ""
+"Enable to allow customers to link their social account on the Thank You page "
+"for faster login & checkout next time they purchase."
+msgstr ""
+"﻿Abilita per consentire ai clienti di collegare il loro account social nella "
+"pagina di ringraziamento per un login e check-out più veloce negli acquisti "
+"successivi."
+
+#: includes/admin/class-wc-social-login-settings.php:126
+msgid "Social Login Display Text"
+msgstr "Testo Social Login "
+
+#: includes/admin/class-wc-social-login-settings.php:127
+msgid ""
+"This option controls the text for the frontend section where the login "
+"providers are shown."
+msgstr ""
+"﻿Questa opzione controlla il testo per la sezione frontend in cui vengono "
+"mostrati i fornitori di accesso."
+
+#: includes/admin/class-wc-social-login-settings.php:129
+#: woocommerce-social-login.php:681
+msgid "For faster checkout, login or register using your social account."
+msgstr ""
+"﻿Per acquisti più veloci, effettua il login o registrati utilizzando un tuo "
+"account social."
+
+#: includes/admin/class-wc-social-login-settings.php:182
+msgid "Providers"
+msgstr "﻿Fornitori"
+
+#: includes/admin/class-wc-social-login-settings.php:187
+#: includes/admin/views/html-report-social-login.php:10
+#: templates/myaccount/social-profiles.php:55
+#: templates/myaccount/social-profiles.php:66
+msgid "Provider"
+msgstr "﻿Fornitore"
+
+#: includes/admin/class-wc-social-login-settings.php:188
+msgid "Status"
+msgstr "﻿Stato"
+
+#: includes/admin/class-wc-social-login-settings.php:203
+msgid "Enabled"
+msgstr "﻿Abilitato"
+
+#: includes/admin/class-wc-social-login-settings.php:221
+msgid "Drag and drop the above providers to control their display order."
+msgstr ""
+"﻿Trascinare e rilasciare i fornitori di cui sopra per controllare il loro "
+"ordine di visualizzazione."
+
+#: includes/admin/views/html-report-social-login.php:11
+msgid "Registrations"
+msgstr "﻿Registrazioni"
+
+#: includes/admin/views/html-report-social-login.php:59
+msgid "linked accounts"
+msgstr "﻿account collegati"
+
+#: includes/class-wc-social-login-opauth.php:93
+msgid "Provider Authentication error"
+msgstr "﻿Errore di autenticazione Provider"
+
+#: includes/class-wc-social-login-opauth.php:98
+msgid "Please enter your email address to complete your registration"
+msgstr "﻿Inserisci il tuo indirizzo e-mail per completare la registrazione"
+
+#: includes/frontend/class-wc-social-login-frontend.php:127
+msgid ""
+"Save time next time you checkout by linking your account to your favorite "
+"social network. No need to remember another username and password."
+msgstr ""
+"﻿Risparmio di tempo la prossima volta che si verifica collegando il tuo "
+"account per il vostro social network preferito. Non c&#39;è bisogno di "
+"ricordare un altro nome utente e password."
+
+#: includes/frontend/class-wc-social-login-frontend.php:191
+msgid "Click here to login"
+msgstr "﻿Clicca qui per accedere"
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:38
+msgid "Amazon"
+msgstr "﻿Amazon"
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:45
+msgid "Your Amazon account is now linked to your account."
+msgstr "﻿Il tuo account Amazon è ora collegato al tuo account."
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:46
+msgid "Amazon account was successfully unlinked from your account."
+msgstr "﻿Account Amazon è stato scollegato con successo dal tuo account."
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:47
+msgid "This Amazon account is already linked to another user account."
+msgstr "﻿Questo account Amazon è già collegato a un altro account utente."
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:48
+msgid ""
+"A user account using the same email address as this Amazon account already "
+"exists."
+msgstr ""
+"﻿Un account utente utilizzante lo stesso indirizzo e-mail esiste già per "
+"questo account Amazon."
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:68
+#, php-format
+msgid "Need help setting up and configuring Amazon? %sRead the docs%s"
+msgstr ""
+"﻿Hai bisogno di aiuto installazione e la configurazione di Amazon? %sLeggi la "
+"documentazione%s"
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:68
+#, php-format
+msgid "The allowed return URL is %s"
+msgstr "L'URL di ritorno permesso è: %s"
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:107
+msgid "Log in with Amazon"
+msgstr "﻿Accedi con Amazon"
+
+#: includes/providers/class-wc-social-login-provider-amazon.php:120
+msgid "Link your account to Amazon"
+msgstr "﻿Collega il tuo account a Amazon"
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:38
+msgid "Facebook"
+msgstr "﻿Facebook"
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:42
+#, php-format
+msgid "Need help setting up and configuring Facebook? %sRead the docs%s"
+msgstr ""
+"﻿Hai bisogno di aiuto per impostare e configurare Facebook? %sLeggi la "
+"documentazione%s"
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:45
+msgid "Your Facebook account is now linked to your account."
+msgstr "﻿Il tuo account di Facebook è ora collegato al tuo account."
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:46
+msgid "Facebook account was successfully unlinked from your account."
+msgstr "﻿Account Facebook è stato scollegato con successo dal tuo account."
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:47
+msgid "This Facebook account is already linked to another user account."
+msgstr "﻿Questo account Facebook è già collegato a un altro account utente."
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:48
+msgid ""
+"A user account using the same email address as this Facebook account already "
+"exists."
+msgstr ""
+"﻿Un account utente utilizzando lo stesso indirizzo e-mail esiste già questo "
+"account Facebook."
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:91
+msgid "App ID"
+msgstr "﻿Il tuo app ID"
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:92
+msgid "App Secret"
+msgstr "il segreto della tua app"
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:105
+msgid "Log in with Facebook"
+msgstr "﻿Accedi con Facebook"
+
+#: includes/providers/class-wc-social-login-provider-facebook.php:118
+msgid "Link your account to Facebook"
+msgstr "﻿Collega il tuo account Facebook"
+
+#: includes/providers/class-wc-social-login-provider-google.php:38
+msgid "Google"
+msgstr "﻿Google"
+
+#: includes/providers/class-wc-social-login-provider-google.php:45
+msgid "Your Google account is now linked to your account."
+msgstr "﻿Il tuo account Google è ora collegato al tuo account."
+
+#: includes/providers/class-wc-social-login-provider-google.php:46
+msgid "Google account was successfully unlinked from your account."
+msgstr "﻿Account Google è stato scollegato con successo dal tuo account."
+
+#: includes/providers/class-wc-social-login-provider-google.php:47
+msgid "This Google account is already linked to another user account."
+msgstr "﻿Questo account Google è già collegato ad un altro account utente."
+
+#: includes/providers/class-wc-social-login-provider-google.php:48
+msgid ""
+"A user account using the same email address as this Google account already "
+"exists."
+msgstr ""
+"﻿Un account utente che utilizza lo stesso indirizzo e-mail esiste già per "
+"questo account Google."
+
+#: includes/providers/class-wc-social-login-provider-google.php:65
+#, php-format
+msgid "Need help setting up and configuring Google? %sRead the docs%s"
+msgstr ""
+"﻿Hai bisogno di aiuto per impostare e configurare Google? %sLeggi la "
+"documentazione%s"
+
+#: includes/providers/class-wc-social-login-provider-google.php:65
+#, php-format
+msgid "The Authorized Redirect URI is %s"
+msgstr "L'URI di redirect autorizzato è %s"
+
+#: includes/providers/class-wc-social-login-provider-google.php:102
+msgid "Log in with Google"
+msgstr "﻿Accedi con Google"
+
+#: includes/providers/class-wc-social-login-provider-google.php:115
+msgid "Link your account to Google"
+msgstr "﻿Collega il tuo account a Google"
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:39
+msgid "Instagram"
+msgstr "﻿Instagram"
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:46
+msgid "Your Instagram account is now linked to your account."
+msgstr "﻿Il tuo account Instagram è ora collegato al tuo account."
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:47
+msgid "Instagram account was successfully unlinked from your account."
+msgstr ""
+"Il tuo profilo Instagram è stato scollegato con successo dal tuo account."
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:48
+msgid "This Instagram account is already linked to another user account."
+msgstr "﻿Questo account Instagram è già collegato a un altro account utente."
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:49
+msgid ""
+"A user account using the same email address as this Instagram account already "
+"exists."
+msgstr ""
+"﻿Un account utente utilizzante lo stesso indirizzo e-mail esiste già per "
+"questo account Instagram."
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:69
+#, php-format
+msgid "Need help setting up and configuring Instagram? %sRead the docs%s"
+msgstr ""
+"﻿Hai bisogno di aiuto per impostare e configurare Instagram? %sLeggi la "
+"documentazione%s"
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:69
+#, php-format
+msgid "The OAuth redirect_uri is %s"
+msgstr "﻿Il redirect_uri OAuth è %s"
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:106
+msgid "Log in with Instagram"
+msgstr "﻿Accedi con Instagram"
+
+#: includes/providers/class-wc-social-login-provider-instagram.php:119
+msgid "Link your account to Instagram"
+msgstr "﻿Collega il tuo account a Instagram"
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:39
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:46
+msgid "Your LinkedIn account is now linked to your account."
+msgstr "﻿Il tuo account LinkedIn è ora collegato al tuo account."
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:47
+msgid "LinkedIn account was successfully unlinked from your account."
+msgstr ""
+"Il tuo profilo LinkedIn è stato scollegato con successo dal tuo account."
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:48
+msgid "This LinkedIn account is already linked to another user account."
+msgstr "﻿Questo account LinkedIn è già collegato a un altro account utente."
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:49
+msgid ""
+"A user account using the same email address as this LinkedIn account already "
+"exists."
+msgstr ""
+"﻿Un account utente utilizzante lo stesso indirizzo e-mail esiste già per "
+"questo account LinkedIn."
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:69
+#, php-format
+msgid "Need help setting up and configuring LinkedIn? %sRead the docs%s"
+msgstr ""
+"﻿Hai bisogno di aiuto per impostare e configurare LinkedIn? %sLeggi la "
+"documentazione%s"
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:69
+#, php-format
+msgid "The OAuth 2.0 Redirect URL is %s"
+msgstr "﻿L&#39;URL OAuth 2.0 Redirect è %s"
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:109
+#: includes/providers/class-wc-social-login-provider-twitter.php:122
+msgid "API Key"
+msgstr "﻿Chiave API"
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:110
+msgid "Secret Key"
+msgstr "﻿Chiave Segreta"
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:123
+msgid "Log in with LinkedIn"
+msgstr "﻿Accedi con LinkedIn"
+
+#: includes/providers/class-wc-social-login-provider-linkedin.php:136
+msgid "Link your account to LinkedIn"
+msgstr "﻿Collega il tuo account a LinkedIn"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:39
+msgid "PayPal"
+msgstr "﻿PayPal"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:46
+msgid "Your PayPal account is now linked to your account."
+msgstr "﻿Il tuo conto PayPal è ora collegato al tuo account."
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:47
+msgid "PayPal account was successfully unlinked from your account."
+msgstr "﻿Conto PayPal è stato scollegato con successo dal tuo account."
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:48
+msgid "This PayPal account is already linked to another user account."
+msgstr "﻿Questo account PayPal è già collegato a un altro account utente."
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:49
+msgid ""
+"A user account using the same email address as this PayPal account already "
+"exists."
+msgstr ""
+"﻿Un account utente che utilizza lo stesso indirizzo e-mail esiste già per "
+"questo account PayPal."
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:66
+#, php-format
+msgid "Need help setting up and configuring PayPal? %sRead the docs%s"
+msgstr ""
+"﻿Hai bisogno di aiuto per impostare e configurare PayPal? %sLeggi la "
+"documentazione%s"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:66
+#, php-format
+msgid "The App redirect URL is %s"
+msgstr "﻿L&#39;URL di reindirizzamento App è %s"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:109
+msgid "Environment"
+msgstr "﻿Ambiente"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:111
+msgid "Select which environment to process logins under."
+msgstr "﻿Selezionare sotto quale ambiente elaborare gli accessi."
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:113
+msgid "Live"
+msgstr "﻿Attivo"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:114
+msgid "Sandbox"
+msgstr "Sandbox"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:120
+msgid "Secret"
+msgstr "﻿Segreto"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:133
+msgid "Log in with PayPal"
+msgstr "﻿Accedi con PayPal"
+
+#: includes/providers/class-wc-social-login-provider-paypal.php:146
+msgid "Link your account to PayPal"
+msgstr "﻿Collega il tuo account a PayPal"
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:38
+msgid "Twitter"
+msgstr "﻿Twitter"
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:45
+msgid "Your Twitter account is now linked to your account."
+msgstr "﻿Il tuo account Twitter è ora collegato al tuo account."
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:46
+msgid "Twitter account was successfully unlinked from your account."
+msgstr "Il tuo account Twitter è stato scollegato con successo dal tuo account."
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:47
+msgid "This Twitter account is already linked to another user account."
+msgstr "﻿Questo account Twitter è già collegato ad un altro account utente."
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:48
+msgid ""
+"A user account using the same email address as this Twitter account already "
+"exists."
+msgstr ""
+"﻿Un account utente utilizzante lo stesso indirizzo e-mail esiste già per "
+"questo account Twitter."
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:69
+#, php-format
+msgid "Need help setting up and configuring Twitter? %sRead the docs%s"
+msgstr ""
+"﻿Hai bisogno di aiuto per impostare e configurare Twitter? %sLeggi la "
+"documentazione%s"
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:69
+#, php-format
+msgid "The callback URL is %s"
+msgstr "﻿L&#39;URL di chiamata è %s"
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:123
+msgid "API Secret"
+msgstr "﻿API Segreto"
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:136
+msgid "Log in with Twitter"
+msgstr "﻿Accedi con Twitter"
+
+#: includes/providers/class-wc-social-login-provider-twitter.php:149
+msgid "Link your account to Twitter"
+msgstr "﻿Collega il tuo account Twitter"
+
+#: includes/widgets/class-wc-social-login-widget.php:44
+msgid "Display social login buttons."
+msgstr "Mostra i pulsanti di social login"
+
+#: includes/widgets/class-wc-social-login-widget.php:48
+#: woocommerce-social-login.php:44 woocommerce-social-login.php:564
+msgid "WooCommerce Social Login"
+msgstr "﻿WooCommerce Social Login"
+
+#: includes/widgets/class-wc-social-login-widget.php:115
+msgid "Title"
+msgstr "﻿Titolo"
+
+#: includes/widgets/class-wc-social-login-widget.php:119
+msgid "Return URL"
+msgstr "﻿URL restituito"
+
+#: lib/skyverge/woocommerce/class-sv-wc-admin-notice-handler.php:192
+msgid "Dismiss"
+msgstr "﻿Elimina"
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:298
+#, php-format
+msgid ""
+"%s requires the %s PHP extension to function.  Contact your host or server "
+"administrator to configure and install the missing extension."
+msgid_plural ""
+"%s requires the following PHP extensions to function: %s.  Contact your host "
+"or server administrator to configure and install the missing extensions."
+msgstr[0] ""
+"﻿%s richiede %s estensione PHP per funzionare. Rivolgersi al proprio host o "
+"server di amministratore per configurare e installare l&#39;estensione "
+"mancante."
+msgstr[1] ""
+"%s richiede %s estensione PHP per funzionare. Rivolgersi al proprio host o "
+"server di amministratore per configurare e installare l&#39;estensione "
+"mancante."
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:318
+#, php-format
+msgid ""
+"%s requires the %s PHP function to exist.  Contact your host or server "
+"administrator to configure and install the missing function."
+msgid_plural ""
+"%s requires the following PHP functions to exist: %s.  Contact your host or "
+"server administrator to configure and install the missing functions."
+msgstr[0] ""
+"﻿%s richiede %s funzione PHP per funzionare. Rivolgersi al proprio host o "
+"server di amministratore per configurare e installare la funzione mancante."
+msgstr[1] ""
+"%s richiede %s funzione PHP per funzionare. Rivolgersi al proprio host o "
+"server di amministratore per configurare e installare la funzione mancante."
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:352
+msgid "Docs"
+msgstr "Documentazione"
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:356
+msgid "Support"
+msgstr "﻿Supporto"
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:360
+msgid "Write a Review"
+msgstr "Aggiungi una recensione"
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:610
+msgid "Configure"
+msgstr "﻿Configura"
+
+#: templates/myaccount/social-profiles.php:39
+msgid "My Social Login Accounts"
+msgstr "﻿I miei login Social"
+
+#: templates/myaccount/social-profiles.php:46
+#, php-format
+msgid "%sAdd more...%s"
+msgstr "%sAggiungi...%s"
+
+#: templates/myaccount/social-profiles.php:50
+msgid "Your account is connected to the following social login providers."
+msgstr "﻿Il tuo account è collegato ai seguenti profili social."
+
+#: templates/myaccount/social-profiles.php:56
+#: templates/myaccount/social-profiles.php:69
+msgid "Account"
+msgstr "﻿Account"
+
+#: templates/myaccount/social-profiles.php:57
+#: templates/myaccount/social-profiles.php:80
+msgid "Last login"
+msgstr "﻿Ultimo accesso"
+
+#: templates/myaccount/social-profiles.php:82
+#, php-format
+msgid "%s @ %s"
+msgstr "%s @ %s"
+
+#: templates/myaccount/social-profiles.php:84
+msgid "Never"
+msgstr "﻿Mai"
+
+#: templates/myaccount/social-profiles.php:89
+msgid "Unlink"
+msgstr "Scollega"
+
+#: templates/myaccount/social-profiles.php:99
+#, php-format
+msgid "You have no social login profiles connected. %sConnect one now%s"
+msgstr "﻿Non ci sono profili Social connessi. %sConnettine uno ora%s"
+
+#: templates/myaccount/social-profiles.php:105
+msgid "You can link your account to the following providers:"
+msgstr "﻿È possibile collegare il tuo account per i seguenti operatori:"
+
+#: woocommerce-social-login.php:477
+#, php-format
+msgid ""
+"Thanks for installing Social Login! Before you get started, please take a "
+"moment to %sread through the documentation%s."
+msgstr ""
+"﻿Grazie per l&#39;installazione del plugin Social Login! Prima di iniziare, si "
+"prega di prendere un momento per %sLeggere la documentazione%s."
+
+#: woocommerce-social-login.php:506
+#, php-format
+msgctxt "Requires SSL"
+msgid ""
+"WooCommerce Social Login: %s requires SSL for authentication, please force "
+"WooCommerce over SSL."
+msgstr ""
+"WooCommerce Social Login: %s necessita di SSL per l'autenticazione, per "
+"favore abilita SSL su WooCommerce."
