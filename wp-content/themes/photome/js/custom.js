@@ -467,6 +467,7 @@ jQuery(document).ready(function(){
 					    jQuery('.top_bar').data('hasbg', 1);
 					    
 					    jQuery('#custom_logo').removeClass('hidden');
+					    jQuery('#menu-item-image').addClass('hidden');
 					    jQuery('#custom_logo_transparent').addClass('hidden');
 					}
 					
@@ -474,6 +475,7 @@ jQuery(document).ready(function(){
 					{
 						jQuery('#mobile_nav_icon').hide();
 					}
+                                        jQuery("#menu-item-image").fadeIn();
 			    }
 			    else if(jQuery(this).scrollTop() < 200)
 			    {
@@ -496,7 +498,9 @@ jQuery(document).ready(function(){
 					    jQuery('#custom_logo').addClass('hidden');
 					    jQuery('#custom_logo_transparent').removeClass('hidden');
 					}
-					
+                                        jQuery("#menu-item-image").fadeOut();
+                                        
+					jQuery('#menu-item-image').removeClass('hidden');
 					jQuery('.top_bar').removeClass('scroll');
 					jQuery('#mobile_nav_icon').show();
 			    }

@@ -15,7 +15,9 @@
 	{
 
 	global $pp_homepage_style;
-	
+	?>
+	<?php if(!is_product()): ?>
+	<?php
 	//If display photostream
 	$pp_photostream = get_option('pp_photostream');
 	if(THEMEDEMO && isset($_GET['footer']) && !empty($_GET['footer']))
@@ -60,7 +62,7 @@
 		}
 	}
 ?>
-
+<?php endif;?>
 <?php
 	//Get Footer Sidebar
 	$tg_footer_sidebar = kirki_get_option('tg_footer_sidebar');
@@ -69,8 +71,9 @@
 	    $tg_footer_sidebar = 0;
 	}
 ?>
-<div class="footer_bar <?php if(isset($pp_homepage_style) && !empty($pp_homepage_style)) { echo esc_attr($pp_homepage_style); } ?> <?php if(!empty($screen_class)) { ?>split<?php } ?> <?php if(empty($tg_footer_sidebar)) { ?>noborder<?php } ?>">
 
+<div class="footer_bar <?php if(isset($pp_homepage_style) && !empty($pp_homepage_style)) { echo esc_attr($pp_homepage_style); } ?> <?php if(!empty($screen_class)) { ?>split<?php } ?> <?php if(empty($tg_footer_sidebar)) { ?>noborder<?php } ?>">
+	<?php if(!is_product()): ?>
 	<?php
 	    if(!empty($tg_footer_sidebar))
 	    {
@@ -106,7 +109,7 @@
 	<?php
 	    }
 	?>
-
+	<?php endif;?>
 	<div class="footer_bar_wrapper <?php if(isset($pp_homepage_style) && !empty($pp_homepage_style)) { echo esc_attr($pp_homepage_style); } ?>">
 		<?php
 			//Check if display social icons or footer menu

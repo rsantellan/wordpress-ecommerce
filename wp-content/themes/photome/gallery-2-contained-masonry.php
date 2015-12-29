@@ -55,7 +55,7 @@ get_header();
 	
 	<?php
 		$tg_full_image_caption = kirki_get_option('tg_full_image_caption');
-	
+                $counter = rand(0, 2);
 	    foreach($all_photo_arr as $key => $photo_id)
 	    {
 	        $small_image_url = '';
@@ -64,7 +64,30 @@ get_header();
 	        if(!empty($photo_id))
 	        {
 	        	$image_url = wp_get_attachment_image_src($photo_id, 'original', true);
-	        	$small_image_url = wp_get_attachment_image_src($photo_id, 'gallery_masonry', true);
+	        	$image_class = '';
+	        	switch($counter)
+	        	{
+	        		case 0:
+	        			$image_class = 'gallery_masonry';
+	        		break;
+	        		case 1:
+	        			$image_class = 'gallery_masonry1';
+	        		break;
+	        		case 2:
+	        			$image_class = 'gallery_masonry2';
+	        		break;
+	        		default:
+	        			$image_class = 'gallery_masonry';
+	        		break;	        			        			        		
+	        	}
+	        	//var_dump($image_class);
+	        	$small_image_url = wp_get_attachment_image_src($photo_id, $image_class);
+                        $counter ++;
+	        	if($counter > 2){
+	        		$counter = 0;
+	        	}                        
+	        	//$image_url = wp_get_attachment_image_src($photo_id, 'original', true);
+	        	//$small_image_url = wp_get_attachment_image_src($photo_id, 'gallery_masonry', true);
 	        }
 	        
 	        //Get image meta data

@@ -12,13 +12,29 @@ function register_my_menu() {
 
 class tg_walker extends Walker_Nav_Menu {
 
+	private $counter = 0;
 	function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
+        
+		if($this->counter == 3)
+		{
+			$tg_retina_logo = kirki_get_option('tg_retina_logo');
+			if(!empty($tg_retina_logo))
+    	    {
+				$output .= '<li class="menu-item menu-item-type-custom menu-item-object-custom" id="menu-item-image" style="display: none !important"> ';
+				$output .= '<a href="'.home_url ().'" style="padding-top: 13px; padding-bottom: 13px;">';
+				$output .= '<img src="'.esc_url($tg_retina_logo).'" alt="'.esc_attr(get_bloginfo('name')).'" width="154" height="59"/>';
+				$output .= '</a></li>';	
+    	    }
+			
+		}
         $id_field = $this->db_fields['id'];
+        //var_dump($this->counter);
         if (!empty($children_elements[$element->$id_field])) { 
             $element->classes[] = 'arrow'; //enter any classname you like here!
         }
         
         Walker_Nav_Menu::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+        $this->counter++;
     }
 }
 

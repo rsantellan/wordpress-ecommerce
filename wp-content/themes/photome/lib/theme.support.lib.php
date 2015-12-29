@@ -11,6 +11,8 @@ if ( function_exists( 'add_theme_support' ) ) {
 if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'gallery_grid', 705, 529, true );
 	add_image_size( 'gallery_masonry', 705, 9999, false );
+	add_image_size( 'gallery_masonry1', 450, 380, true );
+	add_image_size( 'gallery_masonry2', 350, 265, true );
 	add_image_size( 'gallery_next_prev', 700, 350, true );
 	add_image_size( 'blog', 960, 636, true );
 	add_image_size( 'related_post', 190, 140, true );

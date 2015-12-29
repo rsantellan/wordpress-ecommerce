@@ -55,7 +55,7 @@ get_header();
 	
 	<?php
 		$tg_full_image_caption = kirki_get_option('tg_full_image_caption');
-	
+		$counter = rand(0, 2);
 	    foreach($all_photo_arr as $key => $photo_id)
 	    {
 	        $small_image_url = '';
@@ -64,7 +64,29 @@ get_header();
 	        if(!empty($photo_id))
 	        {
 	        	$image_url = wp_get_attachment_image_src($photo_id, 'original', true);
-	        	$small_image_url = wp_get_attachment_image_src($photo_id, 'gallery_masonry', true);
+	        	$image_class = '';
+	        	switch($counter)
+	        	{
+	        		case 0:
+	        			$image_class = 'gallery_masonry';
+	        		break;
+	        		case 1:
+	        			$image_class = 'gallery_masonry1';
+	        		break;
+	        		case 2:
+	        			$image_class = 'gallery_masonry2';
+	        		break;
+	        		default:
+	        			$image_class = 'gallery_masonry';
+	        		break;	        			        			        		
+	        	}
+	        	//var_dump($image_class);
+	        	$small_image_url = wp_get_attachment_image_src($photo_id, $image_class);
+                        $counter ++;
+	        	if($counter > 2){
+	        		$counter = 0;
+	        	}
+                         
 	        }
 	        
 	        //Get image meta data
@@ -79,7 +101,7 @@ get_header();
 			    if(isset($image_url[0]) && !empty($image_url[0]))
 			    {
 			?>		
-			    <a <?php if(!empty($tg_full_image_caption)) { ?>title="<?php if(!empty($image_caption)) { ?><?php echo esc_attr($image_caption); ?><?php } ?>"<?php } ?> class="fancy-gallery" href="<?php echo esc_url($image_url[0]); ?>">
+			    <a <?php if(!empty($tg_full_image_caption)) { ?>title="<?php if(!empty($image_caption)) { ?><?php echo esc_attr($image_caption); ?><?php } ?>"<?php } ?> class="fancy-gallery <?php echo $image_class;?>" href="<?php echo esc_url($image_url[0]); ?>">
 			        <img src="<?php echo esc_url($small_image_url[0]); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
 			    </a>
 			<?php
