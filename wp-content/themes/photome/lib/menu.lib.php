@@ -22,7 +22,7 @@ class tg_walker extends Walker_Nav_Menu {
     	    {
 				$output .= '<li class="menu-item menu-item-type-custom menu-item-object-custom" id="menu-item-image" style="display: none !important"> ';
 				$output .= '<a href="'.home_url ().'" style="padding-top: 13px; padding-bottom: 13px;">';
-				$output .= '<img src="'.esc_url($tg_retina_logo).'" alt="'.esc_attr(get_bloginfo('name')).'" width="154" height="59"/>';
+				$output .= '<img src="'.esc_url($tg_retina_logo).'" alt="'.esc_attr(get_bloginfo('name')).'" width="154"/>';
 				$output .= '</a></li>';	
     	    }
 			
