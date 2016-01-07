@@ -17,7 +17,6 @@ $page_sidebar = '';
 
 //Get Shop Sidebar Display Settting
 $tg_shop_layout = kirki_get_option('tg_shop_layout');
-
 if(THEMEDEMO && isset($_GET['sidebar']))
 {
 	$tg_shop_layout = 'sidebar';
