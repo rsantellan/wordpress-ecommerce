@@ -1,5 +1,5 @@
-<ul>
-	<li><a href="<?php echo esc_attr(get_option('fep_loginurl'));?>"><?php _e("Your Profile");?></a></li>
-	<li><a href="<?php echo esc_attr(get_option('fep_logouturl'));?>"><?php _e("Logout");?></a></li>
-</ul>
-		
+<?php
+		$profilepage = get_option('fep_profilepage');
+		$redirect = get_permalink($profilepage);
+		echo sprintf("You already logged in. To see your profile, go to %s","<a href=\"$redirect\">$redirect</a>");
+?>

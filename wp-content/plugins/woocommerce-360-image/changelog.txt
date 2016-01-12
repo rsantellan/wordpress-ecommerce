@@ -1,0 +1,17 @@
+*** WooCommerce 360 Image Changelog ***
+
+2015.10.29 - version 1.1.0
+ * Fixed unexpected output during plugin activation
+ * Introduces wc360_js_playspeed to override speed during playing
+ * Update threesixty-slider JS to v2.0.4
+ * Added custom JS event 'wc360:init'
+ * Better responsive CSS
+
+2015.03.24 - version 1.0.2
+ * Class ‘wc360-product’ added to 360 products
+
+2014.12.17 - version 1.0.1
+ * Fix fatal error on 404s for some people
+
+2014.09.23 - version 1.0.0
+ * First Release.

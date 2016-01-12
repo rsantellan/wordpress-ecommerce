@@ -19,30 +19,30 @@
 			do_action('profile_personal_options', $profileuser);
 			?>
 
-			<h3><?php _e('Name') ?></h3>
+			<h3><?php _e('Name','fep') ?></h3>
 
 			<table class="form-table">
 				<tr>
-					<th><label for="user_login"><?php _e('Username'); ?></label></th>
-					<td><input type="text" name="user_login" id="user_login" value="<?php echo esc_attr($profileuser->user_login); ?>" disabled="disabled" class="regular-text" /><br /><em><span class="description"><?php _e('Usernames cannot be changed.'); ?></span></em></td>
+					<th><label for="user_login"><?php _e('Username','fep'); ?></label></th>
+					<td><input type="text" name="user_login" id="user_login" value="<?php echo esc_attr($profileuser->user_login); ?>" disabled="disabled" class="regular-text" /><br /><em><span class="description"><?php _e('Usernames cannot be changed.','fep'); ?></span></em></td>
 				</tr>
 			<tr>
-				<th><label for="first_name"><?php _e('First Name') ?></label></th>
+				<th><label for="first_name"><?php _e('First Name','fep') ?></label></th>
 				<td><input type="text" name="first_name" id="first_name" value="<?php echo esc_attr($profileuser->first_name) ?>" class="regular-text" /></td>
 			</tr>
 
 			<tr>
-				<th><label for="last_name"><?php _e('Last Name') ?></label></th>
+				<th><label for="last_name"><?php _e('Last Name','fep') ?></label></th>
 				<td><input type="text" name="last_name" id="last_name" value="<?php echo esc_attr($profileuser->last_name) ?>" class="regular-text" /></td>
 			</tr>
 
 			<tr>
-				<th><label for="nickname"><?php _e('Nickname'); ?> <span class="description"><?php _e('(required)'); ?></span></label></th>
+				<th><label for="nickname"><?php _e('Nickname','fep'); ?> <span class="description"><?php _e('(required)','fep'); ?></span></label></th>
 				<td><input type="text" name="nickname" id="nickname" value="<?php echo esc_attr($profileuser->nickname) ?>" class="regular-text" /></td>
 			</tr>
 
 			<tr>
-				<th><label for="display_name"><?php _e('Display to Public as',FEP) ?></label></th>
+				<th><label for="display_name"><?php _e('Display to Public as','fep') ?></label></th>
 				<td>
 					<select name="display_name" id="display_name">
 					<?php
@@ -72,24 +72,24 @@
 			</tr>
 			</table>
 
-			<h3><?php _e('Contact Info') ?></h3>
+			<h3><?php _e('Contact Info','fep') ?></h3>
 
 			<table class="form-table">
 			<tr>
-				<th><label for="email"><?php _e('E-mail'); ?> <span class="description"><?php _e('(required)'); ?></span></label></th>
+				<th><label for="email"><?php _e('E-mail','fep'); ?> <span class="description"><?php _e('(required)','fep'); ?></span></label></th>
 				<td><input type="text" name="email" id="email" value="<?php echo esc_attr($profileuser->user_email) ?>" class="regular-text" />
 				<?php
 				$new_email = get_option( $current_user->ID . '_new_email' );
 				if ( $new_email && $new_email != $current_user->user_email ) : ?>
 				<div class="updated inline">
-				<p><?php printf( __('There is a pending change of your e-mail to <code>%1$s</code>. <a href="%2$s">Cancel</a>',FEP), $new_email['newemail'], esc_url(get_permalink().'?dismiss=' . $current_user->ID . '_new_email'  ) ); ?></p>
+				<p><?php printf( __('There is a pending change of your e-mail to <code>%1$s</code>. <a href="%2$s">Cancel</a>','fep'), $new_email['newemail'], esc_url(get_permalink().'?dismiss=' . $current_user->ID . '_new_email'  ) ); ?></p>
 				</div>
 				<?php endif; ?>
 				</td>
 			</tr>
 
 			<tr>
-				<th><label for="url"><?php _e('Website') ?></label></th>
+				<th><label for="url"><?php _e('Website','fep') ?></label></th>
 				<td><input type="text" name="url" id="url" value="<?php echo esc_attr($profileuser->user_url) ?>" class="regular-text code" /></td>
 			</tr>
 
@@ -97,7 +97,8 @@
 				$contact_methods = array();
 				
 				$contact_methods = apply_filters("fep_contact_methods",$contact_methods);
-					if(!(is_array($contact_methods))){
+				
+				if(!(is_array($contact_methods))){
                                             $contact_methods = array();
                                          }
 				foreach (_wp_get_user_contactmethods() as $name => $desc) {
@@ -115,7 +116,7 @@
 			<?php
 			if( $show_biographical):
 			?>
-			<h3><?php _e('About Yourself'); ?></h3>
+			<h3><?php _e('About Yourself','fep'); ?></h3>
 			<?php
 			endif;
 			?>
@@ -125,9 +126,9 @@
 			if( $show_biographical):
 			?>
 			<tr>
-				<th><label for="description"><?php _e('Biographical Info'); ?></label></th>
+				<th><label for="description"><?php _e('Biographical Info','fep'); ?></label></th>
 				<td><textarea name="description" id="description" rows="5" cols="30"><?php echo esc_html($profileuser->description); ?></textarea><br />
-				<span class="description"><?php _e('Share a little biographical information to fill out your profile. This may be shown publicly.'); ?></span></td>
+				<span class="description"><?php _e('Share a little biographical information to fill out your profile. This may be shown publicly.','fep'); ?></span></td>
 			</tr>
 			<?php
 			endif;
@@ -138,14 +139,14 @@
 			if ( $show_password_fields ) :
 			?>
 			<tr id="password">
-				<th><label for="pass1"><?php _e('New Password'); ?></label><br /><span class="description"><small><?php _e("If you would like to change the password type a new one. Otherwise leave this blank."); ?></small></span></th>
+				<th><label for="pass1"><?php _e('New Password','fep'); ?></label><br /><span class="description"><small><?php _e("If you would like to change the password type a new one. Otherwise leave this blank.",'fep'); ?></small></span></th>
 				<td>
 					<input type="password" name="pass1" id="pass1" size="16" value="" autocomplete="off" /><br /><br />
-					<input type="password" name="pass2" id="pass2" size="16" value="" autocomplete="off" />&nbsp;<em><span class="description"><?php _e("Type your new password again."); ?></span></em>
+					<input type="password" name="pass2" id="pass2" size="16" value="" autocomplete="off" />&nbsp;<em><span class="description"><?php _e("Type your new password again.","fep"); ?></span></em>
 					
 					<?php if($show_pass_indicator):?>
 					
-					<div id="pass-strength"><?php _e('Strength indicator'); ?></div>
+					<div id="pass-strength"><?php _e('Strength indicator','fep'); ?></div>
 					<?php endif;?>
 					
 					<?php if($show_pass_hint):?>
@@ -155,8 +156,8 @@
 					
 					if(!empty($passhint)){ echo $passhint;}
 					else{?>
-							-&nbsp;<?php _e('The password should be at least seven characters long.'); ?><br />
-							-&nbsp;<?php _e('To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).');?>
+							-&nbsp;<?php _e('The password should be at least seven characters long.','fep'); ?><br />
+							-&nbsp;<?php _e('To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).','fep');?>
 					<?php
 				 		}
 					?>
@@ -175,7 +176,7 @@
 			<br class="clear" />
 				<table width="99%" style="border: none;" cellspacing="2" cellpadding="3" class="editform">
 					<tr>
-						<th scope="row"><?php _e('Additional Capabilities') ?></th>
+						<th scope="row"><?php _e('Additional Capabilities','fep') ?></th>
 						<td><?php
 						$output = '';
 						foreach ( $profileuser->caps as $cap => $value ) {
@@ -194,7 +195,7 @@
 			<p class="submit">
 				<input type="hidden" name="action" value="update" />
 				<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr($user_id); ?>" />
-				<input type="submit" class="button-primary" value="<?php _e('Update Profile'); ?>" name="submit" />
+				<input type="submit" class="button-primary" value="<?php _e('Update Profile','fep'); ?>" name="submit" />
 			</p>
 			</form>
 		</div>

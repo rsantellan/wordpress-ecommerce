@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Frontend Edit Profile
-Version: 1.0.3
+Version: 1.0.5
 Description: Add edit profile to your post or page
 Author: Abdul Ibad
-Author URI: http://www.dulabs.com
-Plugin URI: http://www.dulabs.com/wp-frontend-edit-profile
+Author URI: http://ibad.dulabs.com
+Plugin URI: http://fep.dulabs.com
 License: GPL
 */
 
@@ -16,7 +16,7 @@ if(version_compare($wp_version, "2.8", "<")) { exit($exit_msg); }
 
 define ('FEP','frontend-edit-profile');
 
-define('FEP_VERSION', '1.0.2');
+define('FEP_VERSION', '1.0.5');
 
 define("FEP_URL", WP_PLUGIN_URL . '/frontend-edit-profile/' );
 
@@ -38,41 +38,77 @@ class FRONTEND_EDIT_PROFILE{
 		
 		register_activation_hook(__FILE__, array($this,'default_settings'));
 		add_action('admin_init', array($this,'settings_init'));
-		add_shortcode('editprofile',array($this,'shortcode'));
-		add_shortcode('EDITPROFILE',array($this,'shortcode'));
-		add_shortcode('LOGIN',array($this,'shortcode'));
 
+		add_shortcode('LOGIN_FORM',array($this,'login_shortcode'));
+		add_shortcode('PROFILE_FORM',array($this,'profile_shortcode'));
+
+		// Will remove later
+		add_shortcode('LOGIN',array($this,'login_shortcode'));
+		add_shortcode('editprofile',array($this,'profile_shortcode'));
+		add_shortcode('EDITPROFILE',array($this,'profile_shortcode'));
+		
+		add_action('plugins_loaded', array($this,'localization_init'));	
 		add_action('widgets_init', array($this,'_widget')); 
 		add_action('admin_menu',array($this,'admin_menu'));	
 		add_action('wp_print_styles',array($this,'form_style'));
 		add_action('wp_print_scripts', array($this,'form_script'));
 		add_action('init',array($this,'process_login_form'));	
-		add_action('fep_loginform', array($this,'login_form'));
 		
+		// fep action form
+		add_action('fep_loginform', array($this,'login_form'));
+		add_action('fep_loggedinform', array($this,'loggedin_form'));
+
+		// filters 
 		add_filter('fep_contact_methods', array($this,'contact_methods'));
 		add_filter('logout_url', array($this,'logout_url'));
 		add_filter('login_url', array($this,'login_url'));
+		add_filter('register_url', array($this,'registration_url'));
 		add_filter('lostpassword_url', array($this,'lostpassword_url'));
 		add_filter('user_contactmethods', array($this,'add_contact_methods'));
-		// Additing Action hook widgets_init
 		
-
-
 	}
 
+
+	// localization
+	function localization_init() {
+	    $path = dirname(plugin_basename(__FILE__)) . '/languages/';
+	    load_plugin_textdomain( 'fep', false, $path );
+	}
+
+
+	// register widget
 	function _widget() {
 		register_widget( 'fep_widget' );
 	}
 
+
+	// get plugin current url
 	function plugin_url(){
 		$currentpath = dirname(__FILE__);
 		$siteurl = get_option('siteurl').'/';
 		$plugin_url = str_replace(ABSPATH,$siteurl,$currentpath);
-		
+
 		return $plugin_url;
+	}
+
+	//
+	// http://www.webcheatsheet.com/PHP/get_current_page_url.php
+	//
+	
+	function curPageURL() {
+	 $pageURL = 'http';
+	 if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+	 $pageURL .= "://";
+	 if ($_SERVER["SERVER_PORT"] != "80") {
+	  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	 } else {
+	  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	 }
+	 return $pageURL;
 	}
 	
 	
+	// Add menu to admin
 	function admin_menu(){
 		$mypage = add_options_page('Frontend Edit Profile','Frontend Edit Profile','administrator','fep',array($this,'options_page'));
 		
@@ -80,6 +116,7 @@ class FRONTEND_EDIT_PROFILE{
 		add_action('admin_print_scripts-'.$mypage,array($this,'admin_script'));
 	}
 	
+	// default settings
 	function default_settings(){
 		
 		$siteurl = get_option('siteurl');
@@ -99,9 +136,15 @@ class FRONTEND_EDIT_PROFILE{
 		add_option('fep_loginform','off','','yes');
 		add_option('fep_logouturl',$logout_url,'','yes');
 		add_option('fep_loginurl','','','yes');
+		add_option('fep_loginpage','','','yes');
 		add_option('fep_lostpasswordurl','','','yes');
+		add_option('fep_lostpasswordpage','','','yes');
+		add_option('fep_registerurl','','','yes');
+		add_option('fep_registerpage','','','yes');
+		add_option('fep_profilepage','','','yes');
 	}
 	
+	// initialize settings
 	function settings_init(){
 		register_setting('fep_options','fep_pass_hint','');
 		register_setting('fep_options','fep_custom_pass_hint','');
@@ -113,10 +156,15 @@ class FRONTEND_EDIT_PROFILE{
 		register_setting('fep_options','fep_loginform','');
 		register_setting('fep_options','fep_logouturl','');
 		register_setting('fep_options','fep_loginurl','');
+		register_setting('fep_options','fep_loginpage','');
 		register_setting('fep_options','fep_lostpasswordurl','');
+		register_setting('fep_options','fep_lostpasswordpage','');
 		register_setting('fep_options','fep_registerurl','');
+		register_setting('fep_options','fep_registerpage','');
+		register_setting('fep_options','fep_profilepage','');
 	}
 	
+	// add contact methods
 	function add_contact_methods()
 	{
 		$user_contact['skype'] = __( 'Skype' ); 
@@ -127,22 +175,32 @@ class FRONTEND_EDIT_PROFILE{
 		return $user_contact;
 	}
 
+	// filter login url
 	function login_url( $url ){
 		$fep_url = get_option('fep_loginurl');
-		
+		$fep_loginpage = get_option('fep_loginpage');
+
+		if(!empty($fep_loginpage)){
+			$url = get_permalink($fep_loginpage);
+		}
+
 		if(!empty($fep_url)){
 			$url = $fep_url;
 		}
+
+
 		
 		return $url;
 	}
 	
+	// filter logout url
 	function logout_url( $url ){
 		
 		if(is_admin()) return $url;
 		
 		$fep_url = get_option('fep_logouturl');
 		
+
 		if(!empty($fep_url)){
 			$url = $fep_url;
 		}
@@ -150,9 +208,31 @@ class FRONTEND_EDIT_PROFILE{
 		return $url;
 	}
 	
+	// filter registration url
+	function registration_url( $url ){
+		$fep_url = get_option('fep_registerurl');
+		$fep_registerpage = get_option('fep_registerpage');
+
+		if(!empty($fep_registerpage)){
+			$url = get_permalink($fep_registerpage);
+		}
+
+		if(!empty($fep_url)){
+			$url = $fep_url;
+		}
+		
+		return $url;
+	}
+
+	// filter lost password url
 	function lostpassword_url( $url ){
 		$fep_url = get_option('fep_lostpasswordurl');
-		
+		$fep_lostpasswordpage = get_option('fep_lostpasswordpage');
+
+		if(!empty($fep_lostpasswordpage)){
+			$url = get_permalink($fep_lostpasswordpage);
+		}
+
 		if(!empty($fep_url)){
 			$url = $fep_url;
 		}
@@ -160,6 +240,7 @@ class FRONTEND_EDIT_PROFILE{
 		return $url;
 	}
 	
+	// filter contact methods
 	function contact_methods(){
 		
 		$contact_methods = _wp_get_user_contactmethods();
@@ -181,22 +262,7 @@ class FRONTEND_EDIT_PROFILE{
 		return $new_contact_methods;
 	}
 	
-	//
-	// http://www.webcheatsheet.com/PHP/get_current_page_url.php
-	//
-	
-	function curPageURL() {
-	 $pageURL = 'http';
-	 if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-	 $pageURL .= "://";
-	 if ($_SERVER["SERVER_PORT"] != "80") {
-	  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	 } else {
-	  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	 }
-	 return $pageURL;
-	}
-	
+	// admin options page
 	function options_page(){
 		
 		$pass_hint = (get_option('fep_pass_hint')=="on")? " checked=\"checked\"" : " ";
@@ -211,23 +277,32 @@ class FRONTEND_EDIT_PROFILE{
 		
 		$login_form = (get_option('fep_loginform')=="on") ? " checked=\"checked\"" : " ";
 	
+		$loginpage = get_option('fep_loginpage');
+
 		$contact_methods = get_option("fep_contact_methods");
 		
 		if(!(is_array($contact_methods))){
 			$contact_methods = array();
 		}
 		
+		$pages = get_pages(array('post_type' => 'page',
+							'post_status' => 'publish'));
+
 		include_once ( realpath ( dirname(__FILE__) )."/admin_form.php" );
 	}
 	
+	/* Add Styles to Admin*/
 	function admin_style(){
-					/* Add Styles to Admin*/
+
 	}
 	
+	/* Add Scripts to Admin*/
 	function admin_script(){
-			/* Add Scripts to Admin*/
+			
 	}
 	
+
+	// current form style
 	function form_style() {
 
 		$style = get_option('fep_style');
@@ -245,6 +320,7 @@ class FRONTEND_EDIT_PROFILE{
 	
 	}
 	
+	// form script
 	function form_script(){
 		
 		$plugin_url = self::plugin_url();
@@ -252,10 +328,13 @@ class FRONTEND_EDIT_PROFILE{
 		$src = $plugin_url.'/fep.js';
 	
 		wp_enqueue_script( 'password-strength-meter' );
+		
 		wp_enqueue_script('fep-forms-script',$src,'','1.0');
 	}
 	
-	function process_form( $atts ){
+
+	// update process
+	function update_process_form( $atts ){
 		
 		global $wpdb;
 		
@@ -294,7 +373,7 @@ class FRONTEND_EDIT_PROFILE{
 			$message = $errors->get_error_message();
 			$style = "error";
 		}else{
-			$message = __("<strong>Success</strong>: Profile updated");
+			$message = __("Profile updated","fep");
 			$style = "success";
 		}
 			$output  = "<div id=\"fep-message\" class=\"fep-message-".$style."\">".$message.'</div>';
@@ -303,6 +382,7 @@ class FRONTEND_EDIT_PROFILE{
 			return $output; 
 	}
 	
+	// build profile form
 	function build_form( $data="" ){
 		
 		$current_user = wp_get_current_user();
@@ -325,6 +405,7 @@ class FRONTEND_EDIT_PROFILE{
 		return $form;
 	}
 	
+	// login process
 	function process_login_form(){
 		
 		if(isset($_GET['action'])){
@@ -390,6 +471,7 @@ class FRONTEND_EDIT_PROFILE{
 	
 	}
 	
+	// build login form
 	function login_form( $url="" ){
 		
 		$wp_error = $this->wp_error;
@@ -401,41 +483,71 @@ class FRONTEND_EDIT_PROFILE{
 		include_once( realpath ( dirname(__FILE__) ). "/login_form.php" );
 	}
 	
-	function basic_form( $atts ){
-		
-		$text = get_option("fep_notlogin");
-		$show_loginform = (get_option('fep_loginform') == "on")? true : false;	
+	function loggedin_form()
+	{
+		include_once( realpath ( dirname(__FILE__) ). "/loggedin_form.php" );
+	}
+	
+	// access warning
+	function access_denied()
+	{
+			$text = get_option("fep_notlogin");
+			$show_loginform = (get_option('fep_loginform') == "on")? true : false;	
 			
-		if( !(is_user_logged_in()) ){
-			
+
 			$login_url = wp_login_url();
 			$lostpassword_url = wp_lostpassword_url();
+			$register_url = wp_registration_url();
+
 			$text = str_replace("%LOGIN_URL%",$login_url,$text);
+			$text = str_replace("%REGISTER_URL%",$register_url,$text);
 			$text = str_replace("%LOSTPASSWORD_URL%",$lostpassword_url,$text);
 			
 			_e($text);
+
 			if($show_loginform){
 				echo "<br /><br />";
 				do_action('fep_loginform');
 			}
 			return;
-		}
+	}
+
+	// login action
+	function basic_form( $atts ){
 		
-		if(isset($_POST['user_id'])) {
-			$output = self::process_form($atts);	
-			return $output;
-		} else {
-			$data = array();
-			$form = self::build_form( $data );
-			return $form;		
-		}
-		
+
+			//see profile form
+			#$data = array();
+			#$form = self::build_form( $data );
+			#return $form;		
+
+			if(is_user_logged_in()){
+				do_action('fep_loggedinform');
+			}else{
+				do_action('fep_loginform');
+			}		
 
 	}
 	
-	function shortcode( $atts ){
+	// login shortcode
+	function login_shortcode( $atts ){
 		$function = self::basic_form( $atts );
 		return $function;
+	}
+
+	// profile shortcode
+	function profile_shortcode( $atts ){
+		
+		if(is_user_logged_in()){
+			if(isset($_POST['user_id'])) {
+				$output = self::update_process_form($atts);	
+				return $output;
+			} else {
+				return self::build_form();
+			}
+		}else{
+			$this->access_denied();
+		}
 	}
 	
 }

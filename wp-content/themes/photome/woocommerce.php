@@ -26,6 +26,10 @@ if($tg_shop_layout == 'sidebar')
 {
 	$page_sidebar = 'Shop Sidebar';
 }
+if(is_product())
+{
+	$page_sidebar = '';
+}
 ?>
 
 <?php

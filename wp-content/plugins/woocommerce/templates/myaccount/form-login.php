@@ -25,9 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php endif; ?>
 
-		<p style="    font-size: 32px;  font-weight: 900;  text-align: center;"> <?php _e( 'Ya tenés usuario? ', 'woocommerce' ); ?></p>
-        
-        <p style="    font-size: 20px;  font-weight: 900;  text-align: center;">  <?php _e( ' Logueate debajo! ', 'woocommerce' ); ?></p>
+		<h2><?php _e( 'Login', 'woocommerce' ); ?></h2>
 
 		<form method="post" class="login">
 
@@ -46,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-login' ); ?>
-				<input type="submit" class="button" name="login" value="<?php esc_attr_e( 'Entrar', 'woocommerce' ); ?>" />
+				<input type="submit" class="button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
 				<label for="rememberme" class="inline">
 					<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
 				</label>
@@ -65,10 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="col-2">
 
-		<p style="    font-size: 32px;  font-weight: 900;  text-align: center;">  <?php _e( 'Primera vez en el sitio? ', 'woocommerce' ); ?></p>
-
-		<p style="    font-size: 20px;  font-weight: 900;  text-align: center;">  <?php _e( ' Unite a nostros! ', 'woocommerce' ); ?></p>
-        
+		<h2><?php _e( 'Register', 'woocommerce' ); ?></h2>
 
 		<form method="post" class="register">
 
@@ -105,7 +100,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-register' ); ?>
-				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Registrarme', 'woocommerce' ); ?>" />
+				<input type="submit" class="button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
 			</p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>

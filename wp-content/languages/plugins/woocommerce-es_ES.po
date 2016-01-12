@@ -5728,15 +5728,15 @@ msgstr "Pasarelas de pago"
 msgid "Installed gateways are listed below. Drag and drop gateways to control their display order on the frontend."
 msgstr "Pasarelas instaladas se enumeran a continuación. Arrastre y suelte las puertas de enlace para controlar su orden de presentación en el frontend."
 
-#: includes/admin/settings/class-wc-settings-checkout.php:234
+#: includes/admin/settings/class-wc-settings-checkout.php:238
 msgid "Gateway Display Order"
 msgstr "Pasarela Visualización Pedido"
 
-#: includes/admin/settings/class-wc-settings-checkout.php:242
+#: includes/admin/settings/class-wc-settings-checkout.php:246
 msgid "Gateway"
 msgstr "Pasarela"
 
-#: includes/admin/settings/class-wc-settings-checkout.php:243
+#: includes/admin/settings/class-wc-settings-checkout.php:247
 msgid "Gateway ID"
 msgstr "Pasarela ID"
 
@@ -7477,7 +7477,7 @@ msgid "Enter a SKU for this variation or leave blank to use the parent product S
 msgstr "Introduzca un SKU de esta variación o dejar en blanco para usar el producto padre SKU."
 
 #: includes/admin/meta-boxes/views/html-variation-admin.php:76
-#: includes/admin/settings/class-wc-settings-checkout.php:244
+#: includes/admin/settings/class-wc-settings-checkout.php:248
 #: includes/admin/settings/class-wc-settings-shipping.php:205
 #: includes/admin/views/html-admin-page-status-tools.php:37
 #: includes/admin/views/html-admin-page-status-tools.php:48
@@ -9927,7 +9927,7 @@ msgstr "Marcar como destacado"
 #: includes/admin/class-wc-admin-post-types.php:689
 #: includes/admin/class-wc-admin-post-types.php:691
 #: includes/admin/class-wc-admin-post-types.php:693
-#: includes/admin/settings/class-wc-settings-checkout.php:285
+#: includes/admin/settings/class-wc-settings-checkout.php:289
 #: includes/admin/settings/class-wc-settings-shipping.php:225
 #: includes/admin/views/html-bulk-edit-product.php:205
 #: includes/admin/views/html-bulk-edit-product.php:242
@@ -10869,7 +10869,7 @@ msgstr "API Key revocada correctamente."
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Error en la acción. Por favor, recarga la página y vuelve a intentarlo."
 
-#. #-#-#-#-#  tmp-woocommerce.pot (WooCommerce 2.4.12)  #-#-#-#-#
+#. #-#-#-#-#  tmp-woocommerce.pot (WooCommerce 2.4.13)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/abstracts/abstract-wc-order.php:2171
 #: includes/abstracts/abstract-wc-order.php:2172
