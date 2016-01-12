@@ -21,7 +21,7 @@ class tg_walker extends Walker_Nav_Menu {
 			if(!empty($tg_retina_logo))
     	    {
 				$output .= '<li class="menu-item menu-item-type-custom menu-item-object-custom" id="menu-item-image" style="display: none !important"> ';
-				$output .= '<a href="'.home_url ().'" style="padding-top: 13px; padding-bottom: 13px;">';
+				$output .= '<a href="'.home_url ().'" style="vertical-align: middle;line-height: 18px;padding-top: 13px;padding-bottom: 13px;">';
 				$output .= '<img src="'.esc_url($tg_retina_logo).'" alt="'.esc_attr(get_bloginfo('name')).'" width="154"/>';
 				$output .= '</a></li>';	
     	    }
