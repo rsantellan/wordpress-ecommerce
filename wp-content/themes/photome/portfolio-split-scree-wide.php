@@ -41,7 +41,6 @@ get_template_part("/templates/template-header");
 
     <!-- Begin main content -->
     <div class="inner_wrapper">
-
 	    <div class="sidebar_content full_width fixed_column">
 	    
 	    	<?php

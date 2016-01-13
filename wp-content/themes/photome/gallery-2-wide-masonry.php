@@ -49,7 +49,6 @@ get_header();
 ?>
     
 <div class="inner">
-
 	<div class="inner_wrapper nopadding">
 	
 	<div id="page_main_content" class="sidebar_content full_width nopadding fixed_column">

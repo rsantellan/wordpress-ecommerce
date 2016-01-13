@@ -66,7 +66,6 @@ get_template_part("/templates/template-header");
 ?>
     
 <div class="inner">
-
 	<div class="inner_wrapper nopadding">
 	
 	<?php

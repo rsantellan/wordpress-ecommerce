@@ -53,7 +53,6 @@ get_template_part("/templates/template-header");
 ?>
 
 <div class="inner">
-
     <!-- Begin main content -->
     <div class="inner_wrapper">
 

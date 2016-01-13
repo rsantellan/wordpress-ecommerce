@@ -551,19 +551,20 @@ function tg_get_instagram($username, $access_token, $items = 8)
     
 		    $isg = new instagramPhp($username, $access_token); 
 		    $shots = $isg->getUserMedia(array('count'=> $items)); 
-		
-			foreach ($shots->data as $key => $item)
-			{
-				$thumb_url = $item->images->thumbnail->url;
-				$large_url = $item->images->standard_resolution->url;
-				
-				$photos_arr[] = array(
-					'thumb_url' => $thumb_url,
-					'url' => $large_url,
-					'link' => $item->link,
-				);
-			} 
-			
+                        if($shots)
+                        {
+                                foreach ($shots->data as $key => $item)
+                                {
+                                        $thumb_url = $item->images->thumbnail->url;
+                                        $large_url = $item->images->standard_resolution->url;
+                                        
+                                        $photos_arr[] = array(
+                                                'thumb_url' => $thumb_url,
+                                                'url' => $large_url,
+                                                'link' => $item->link,
+                                        );
+                                } 
+                        }
 			if(!empty($photos_arr))
 			{
 				if(file_exists($instagram_cache_path))

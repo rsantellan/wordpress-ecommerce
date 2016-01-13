@@ -55,7 +55,6 @@ get_header();
 	<div id="page_main_content" class="sidebar_content full_width nopadding fixed_column">
 	
 	<div id="portfolio_filter_wrapper" class="gallery two_cols portfolio-content section content clearfix wide" data-columns="2">
-	
 	<?php
 		$tg_full_image_caption = kirki_get_option('tg_full_image_caption');
 	
