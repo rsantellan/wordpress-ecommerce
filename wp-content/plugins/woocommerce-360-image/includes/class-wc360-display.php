@@ -208,7 +208,8 @@ if ( ! class_exists( 'WC_360_Image_Display' ) ) {
 				<style type="text/css">
 
 					#container.wc360-container {
-						width: <?php echo $width; ?>px;
+						/**width: <?php echo $width; ?>px;**/
+						width: 50%;
 					}
 
 				</style>

@@ -41,7 +41,8 @@ wp_enqueue_script("custom_fullpage", get_template_directory_uri()."/js/custom_fu
 
 <!-- Begin content -->   
 <div id="fullpage">
-		<?php
+	
+	<?php
 	    //Get galleries
 	    global $wp_query;
 	    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

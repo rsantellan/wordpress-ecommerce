@@ -6,7 +6,7 @@
 <?php
 $_pf = new WC_Product_Factory();
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="min-height: 705px;  background-color: white;">
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="min-height: 705px; background-color: white; max-width: 80%; margin-left: 12%;">
   <div class="left-side" style="float: left; width: 50%;">
     <?php the_post_thumbnail( 'gallery_masonry' , array('alt' => the_title('', '', false))); ?>
   </div>
@@ -27,18 +27,20 @@ $_pf = new WC_Product_Factory();
               ) );
         }
         ?>
-        <div class="product-small" >
+        <div class="product-small" style="padding-bottom: 20px">
           <div class="product-image" style="float: left; width: 19%">
             <?php echo $image; ?>
           </div>
-          <div class="product-text" style="float: left; width: 50%">
+          <div class="product-text" style="float: left; width: 50%; text-align: center;">
             <h3><?php echo $_product->get_title( );?></h3>
             <hr/>
             <?php echo ($_product->get_post_data()->post_excerpt);?>
             <hr/>
             <span>
-            <?php echo ($_product->get_price( ));?>
+            <?php echo ($_product->get_price_html());?>
             </span>
+            <br/>
+            <a href="<?php echo ($_product->add_to_cart_url());?>" class="single_add_to_cart_button alt"><?php echo esc_html( $_product->single_add_to_cart_text() ); ?></a>
           </div>
           <div class="product-link" style="float: right; width: 29%; vertical-align: middle; line-height: 250px;">
             <a href="<?php echo $_product->get_permalink( );?>" style="background-color: black; color: white; font-weight: bold; font-size: 20px; text-align: center; padding: 9px; text-decoration: none;">Ver producto</a>

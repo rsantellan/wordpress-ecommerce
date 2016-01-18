@@ -40,7 +40,7 @@ if(!empty($tg_gallery_hover_slide))
 ?>
     
 <div class="inner">
-wp-content/themes/photome/gallery-archive-2-contained.php
+
 	<div class="inner_wrapper nopadding">
 	
 	<div id="page_main_content" class="sidebar_content full_width nopadding fixed_column">
