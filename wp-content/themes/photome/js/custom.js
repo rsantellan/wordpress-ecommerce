@@ -61,7 +61,12 @@ jQuery(document).ready(function(){
 	  	removalDelay: 300,
 	  	mainClass: 'mfp-fade'
 	});
-    
+
+        jQuery('.ajax_iframe').magnificPopup({
+	  	type: 'ajax',
+	  	removalDelay: 300,
+	  	mainClass: 'mfp-fade'
+	});    
     jQuery('#menu_expand_wrapper a').on( 'click', function(){
     	jQuery('#menu_wrapper').fadeIn();
 	    jQuery('#custom_logo').animate({'left': '15px', 'opacity': 1}, 400);

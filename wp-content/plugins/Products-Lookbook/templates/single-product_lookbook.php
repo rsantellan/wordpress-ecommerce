@@ -1,22 +1,18 @@
 <?php
  /*Template Name: New Template
  */
-get_header(); ?>
+//get_header(); ?>
 <div id="primary">
 	<div id="content" role="main">
 	<?php
-	$mypost = array( 'post_type' => 'product_lookbook', );
-	$loop = new WP_Query( $mypost );
-    //var_dump($loop);
-    $_pf = new WC_Product_Factory();
+	$_pf = new WC_Product_Factory();
 	?>
-	<?php while ( $loop->have_posts() ) : $loop->the_post();?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-color: white; height: 800px">
 			<header class="entry-header">
 
 				<!-- Display featured image in right-aligned floating div -->
-				<div style="float: right; margin: 10px">
-					<?php the_post_thumbnail( array( 100, 100 ) ); ?>
+				<div style="float: left; margin: 10px">
+					<?php the_post_thumbnail( 'gallery_masonry' ); ?>
 				</div>
 
 				<!-- Display Title and Author Name -->
@@ -53,8 +49,7 @@ get_header(); ?>
 			<div class="entry-content"><?php the_content(); ?></div>
 		</article>
 
-	<?php endwhile; ?>
 	</div>
 </div>
 <?php wp_reset_query(); ?>
-<?php get_footer(); ?>
+<?php //get_footer(); ?>

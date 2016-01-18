@@ -16,23 +16,20 @@ if(isset($page->ID))
     $current_page_id = $page->ID;
 }
 
-//Check if gallery template
-global $page_gallery_id;
-if(!empty($page_gallery_id))
-{
-	$current_page_id = $page_gallery_id;
-}
+get_header();
 
-//Check if password protected
-get_template_part("/templates/template-password");
+//Check if disable slideshow hover effect
+$tg_gallery_hover_slide = kirki_get_option( "tg_gallery_hover_slide" );
+
+if(!empty($tg_gallery_hover_slide))
+{
+	wp_enqueue_script("jquery.cycle2.min", get_template_directory_uri()."/js/jquery.cycle2.min.js", false, THEMEVERSION, true);
+	wp_enqueue_script("custom_cycle", get_template_directory_uri()."/js/custom_cycle.js", false, THEMEVERSION, true);
+}
+//Include custom header feature
+get_template_part("/templates/template-header");
 
 $all_photo_arr = array();
-//Get gallery images
-//$all_photo_arr = get_post_meta($current_page_id, 'wpsimplegallery_gallery', true);
-
-//Get global gallery sorting
-//$all_photo_arr = pp_resort_gallery_img($all_photo_arr);
-get_header();
 $args = array (
     'taxonomy' => 'lookbook_category', //your custom post type
     'orderby' => 'name',
@@ -40,15 +37,6 @@ $args = array (
     'hide_empty' => 0 //shows empty categories
     );
 $categories = get_categories( $args );
-
-?>
-
-<?php
-	global $page_content_class;
-	$page_content_class = 'wide';
-
-    //Include custom header feature
-	//get_template_part("/templates/template-header");
 $list = array();
 ?>
 
@@ -72,7 +60,7 @@ wp-content/themes/photome/archive-product_lookbook.php
         foreach($categories as $category):
             $argsPosts = array(
             'post_type' => 'product_lookbook', 
-            'posts_per_page' => '1', 
+            'posts_per_page' => '5', 
             'order' => 'DESC', 
             'tax_query' => array(
                 array(
@@ -83,49 +71,55 @@ wp-content/themes/photome/archive-product_lookbook.php
             ),
           );
         $index_query = new WP_Query($argsPosts);
+        $isFirst = true;
           if ( $index_query->have_posts() ):
+?>
+        <div class="element grid classic2_cols">
+	
+		<div class="one_half gallery2 static filterable gallery_type archive animated<?php echo esc_attr($key+1); ?>" data-id="post-<?php echo esc_attr($key+1); ?>">
+<?php
+        $startPostId = null;
+            while ( $index_query->have_posts() ):
             $index_query->the_post();
             ?>
-            <a <?php if(!empty($tg_full_image_caption)) { ?>title="<?php if(!empty($image_caption)) { ?><?php echo esc_attr($image_caption); ?><?php } ?>"<?php } ?> class="fancy-gallery" href="<?php echo esc_url($image_url[0]); ?>">
-              <?php the_post_thumbnail( 'gallery_grid' ); ?>
-            </a>
-              <div style="float: right; margin: 10px">
-                    <a href="<?php echo get_term_link( $category->slug, 'lookbook_category' ); ?>">
-                    <?php the_post_thumbnail( array( 100, 100 ) ); ?>
-                </a>  
+			<?php if(has_post_thumbnail() && $isFirst): 
+                $startPostId = get_the_ID();
+			?>	
+			    <a href="<?php echo get_term_link( $category->slug, 'lookbook_category' ); ?>">
+			    	<div class="gallery_archive_desc">
+			    		<h4><?php echo $category->name; ?></h4>
+			    		<div class="post_detail"><?php echo $category->description; ?></div>
+			    	</div>
+                    <ul class="gallery_img_slides">
+                <?php endif;?>
+                <?php if(!$isFirst): ?>
+                        <li>
+                            <?php the_post_thumbnail( 'gallery_grid' , array('class' => 'static')); ?>
+                        </li>
+				<?php else: ?>
+                    <?php //the_post_thumbnail( 'gallery_grid' , array('class' => '')); ?>
+                <?php endif;?>
+                <?php $isFirst = false; ?>
+             <?php endwhile;?>   
+             <?php if(!$isFirst): ?>
+                    </ul>
+                    <?php 
+                    echo get_the_post_thumbnail($startPostId, 'gallery_grid');
+                    ?>
+			    </a>
+             <?php endif;?>   
+		</div>
+		
+	</div>            
               </div>
             <?php
-            $key++;
+            
           endif;
+          $key++;
         endforeach;
       /* Restore original Post Data */
       wp_reset_postdata();    
-        
-        foreach($list as $categoryId => $data):
-          $postData = $data['data'];
-          var_dump($postData->ID);
-          //$image_url = get_the_post_thumbnail($postData->ID, 'original', true);
-          
-          //$small_image_url = get_the_post_thumbnail($postData->ID, 'gallery_grid', true);
-          //$image_caption = get_post_field('post_excerpt', $postData->ID);
-          //$image_alt = get_post_meta($postData->ID, '_wp_attachment_image_alt', true);
-          
-        ?>
-      <div class="element grid classic2_cols">
-	
-		<div class="one_half gallery2 static filterable gallery_type animated<?php echo esc_attr($key+1); ?>" data-id="post-<?php echo esc_attr($key+1); ?>">
-		
-			<a <?php if(!empty($tg_full_image_caption)) { ?>title="<?php if(!empty($image_caption)) { ?><?php echo esc_attr($image_caption); ?><?php } ?>"<?php } ?> class="fancy-gallery" href="<?php echo esc_url($image_url[0]); ?>">
-        <img src="<?php echo esc_url($small_image_url[0]); ?>" alt="<?php echo esc_attr($image_alt); ?>" />
-    </a>
-		
-		</div>
-		
-      </div>      
-        <?php
-        $key++;
-        endforeach;
-	?>
+    ?>
 		
 	</div>
 	

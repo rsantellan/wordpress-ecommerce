@@ -49,6 +49,7 @@ function create_product_lookbook() {
       'menu_icon' => 'menu-icon-galleries', // plugins_url( 'images/image.png', __FILE__ ),
       'has_archive' => true,
       'with_front' => true,
+      //'rewrite' => array('slug' => 'plookbook'),
     );
     register_post_type( 'product_lookbook', $args );
 }
