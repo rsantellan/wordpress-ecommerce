@@ -46,8 +46,7 @@ $list = array();
 ?>
     
 <div class="inner">
-  COPIAR: wp-content/themes/photome/gallery-archive-2-contained.php
-wp-content/themes/photome/archive-product_lookbook.php
+  <!--COPIAR: wp-content/themes/photome/gallery-archive-2-contained.php wp-content/themes/photome/archive-product_lookbook.php -->
 	<div class="inner_wrapper nopadding">
 	
 	<div id="page_main_content" class="sidebar_content full_width nopadding fixed_column">

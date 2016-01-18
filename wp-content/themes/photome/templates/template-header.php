@@ -51,6 +51,8 @@ elseif(is_archive())
     	$ob_term = get_term_by('slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
     	$page_taxonomy = get_taxonomy($ob_term->taxonomy);
     	$page_title = $page_taxonomy->labels->name.' "'.$ob_term->name.'"';
+    elseif ( get_post_type() == 'product_lookbook' ) : 
+        $page_title = 'Lookbooks';
     else :
     	$page_title = __( 'Blog Archives', THEMEDOMAIN); 
     endif;

@@ -47,7 +47,7 @@ function post_type_galleries() {
     	'menu_icon' => ''
 	); 		
 
-	register_post_type( 'galleries', $args );
+	//register_post_type( 'galleries', $args );
 	
   	$labels = array(			  
   	  'name' => _x( 'Gallery Categories', 'taxonomy general name', PLUGINDOMAIN ),
@@ -61,7 +61,7 @@ function post_type_galleries() {
   	  'add_new_item' => __( 'Add New Gallery Category', PLUGINDOMAIN ),
   	  'new_item_name' => __( 'New Gallery Category Name', PLUGINDOMAIN ),
   	); 							  	  
-  	
+  	/*
   	register_taxonomy(
 		'gallerycat',
 		'galleries',
@@ -74,6 +74,7 @@ function post_type_galleries() {
 			'rewrite' => array( 'slug' => 'gallerycat', 'with_front' => false ),
 		)
 	);	
+    */
 } 
 								  
 add_action('init', 'post_type_galleries');

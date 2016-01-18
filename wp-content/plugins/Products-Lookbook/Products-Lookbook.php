@@ -49,7 +49,7 @@ function create_product_lookbook() {
       'menu_icon' => 'menu-icon-galleries', // plugins_url( 'images/image.png', __FILE__ ),
       'has_archive' => true,
       'with_front' => true,
-      //'rewrite' => array('slug' => 'plookbook'),
+      'rewrite' => array('slug' => 'look-books'),
     );
     register_post_type( 'product_lookbook', $args );
 }
@@ -89,7 +89,7 @@ function my_taxonomies_product_lookbook() {
     'hierarchical' => false,
     'show_admin_column' => true,  
     'query_var' => true, // enable taxonomy-specific querying  
-    'rewrite' => true // pretty permalinks for your taxonomy?
+    'rewrite' => array('slug' => 'lookbook'), // pretty permalinks for your taxonomy?
   );
   register_taxonomy( 'lookbook_category', 'product_lookbook', $args );
 }
