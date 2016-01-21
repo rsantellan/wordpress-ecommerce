@@ -26,13 +26,13 @@ add_filter( 'template_include', 'include_template_function', 1 );
  */
 function create_product_lookbook() {
     $labels = array(
-                'name' => 'Lookbooks',
-                'singular_name' => 'Item Lookbook',
-                'add_new' => 'Add New',
-                'add_new_item' => 'Add New Product Lookbook',
+                'name' => 'Imagenes de Lookbook',
+                'singular_name' => 'Imagen',
+                'add_new' => 'Agregar nueva imagen',
+                'add_new_item' => 'Agregar nueva imagen',
                 'edit' => 'Edit',
-                'edit_item' => 'Edit Product Lookbook',
-                'new_item' => 'New Product Lookbook',
+                'edit_item' => 'Editar Image',
+                'new_item' => 'Nueva Image',
                 'view' => 'View',
                 'view_item' => 'View Product Lookbook',
                 'search_items' => 'Search Product Lookbook',
@@ -46,7 +46,7 @@ function create_product_lookbook() {
       'menu_position' => 15,
       'supports' => array( 'title', 'thumbnail', 'page-attributes'),
       'taxonomies' => array( '' ),
-      'menu_icon' => 'menu-icon-galleries', // plugins_url( 'images/image.png', __FILE__ ),
+      'menu_icon' => 'dashicons-images-alt2',//'menu-icon-galleries', // plugins_url( 'images/image.png', __FILE__ ),
       'has_archive' => true,
       'with_front' => true,
       'rewrite' => array('slug' => 'look-books'),
@@ -109,10 +109,13 @@ function display_product_lookbook_meta_box( $product_lookbook ) {
     // Retrieve current name of the Director and Movie Rating based on review ID
     $products_associations =  get_post_meta( $product_lookbook->ID, 'products_associations', true );
     $values = array();
-    foreach($products_associations as $association){
-      $values[$association] = $association;
-      
+    if(is_array($products_associations))
+    {
+      foreach($products_associations as $association){
+        $values[$association] = $association;
+      }
     }
+    
     $args     = array( 'post_type' => 'product' );
     $products = get_posts( $args );
     ?>
