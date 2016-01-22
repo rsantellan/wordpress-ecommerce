@@ -9,7 +9,7 @@ $_pf = new WC_Product_Factory();
     <div class="page_content_wrapper">
         <div class="inner">
             <div style="background-color: white;">
-                <div style="padding-top:3%" class="one_half ">
+                <div style="padding-top:3%" class="one_half post_img">
                     <?php the_post_thumbnail( 'gallery_masonry' , array('style' => 'padding-top: 10%' , 'alt' => the_title('', '', false))); ?>
                 </div>
                 <div style="padding-top:20px" class="one_half last ">
@@ -40,7 +40,7 @@ $_pf = new WC_Product_Factory();
                             <?php echo ($_product->get_post_data()->post_excerpt);?>
                             <hr/>
                             <span>
-                            <?php echo ($_product->get_price_html());?>
+                            Precio: <strong><?php echo ($_product->get_price_html());?></strong>
                             </span>
                             <br/>
                             <a href="<?php echo ($_product->add_to_cart_url());?>" class="single_add_to_cart_button alt"><?php echo esc_html( $_product->single_add_to_cart_text() ); ?></a>

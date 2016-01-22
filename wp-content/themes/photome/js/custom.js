@@ -65,7 +65,9 @@ jQuery(document).ready(function(){
         jQuery('.ajax_iframe').magnificPopup({
 	  	type: 'ajax',
 	  	removalDelay: 300,
-	  	mainClass: 'mfp-fade'
+	  	mainClass: 'mfp-fade',
+                showCloseBtn: true,
+                closeBtnInside: true,
 	});    
     jQuery('#menu_expand_wrapper a').on( 'click', function(){
     	jQuery('#menu_wrapper').fadeIn();
