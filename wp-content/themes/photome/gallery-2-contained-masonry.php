@@ -71,10 +71,10 @@ get_header();
 	        			$image_class = 'gallery_masonry';
 	        		break;
 	        		case 1:
-	        			$image_class = 'gallery_masonry1';
+	        			$image_class = 'gallery_masonry';
 	        		break;
 	        		case 2:
-	        			$image_class = 'gallery_masonry2';
+	        			$image_class = 'gallery_masonry';
 	        		break;
 	        		default:
 	        			$image_class = 'gallery_masonry';

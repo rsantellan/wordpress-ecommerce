@@ -43,7 +43,7 @@ get_header();
 	
 	<div id="page_main_content" class="sidebar_content full_width nopadding fixed_column">
 	
-	<div id="portfolio_filter_wrapper" class="gallery three_cols portfolio-content section content clearfix" data-columns="3">
+	<div id="portfolio_filter_wrapper" class="gallery two_cols portfolio-content section content clearfix" data-columns="2">
 	
 	<?php
 		$tg_full_image_caption = kirki_get_option('tg_full_image_caption');
@@ -57,19 +57,19 @@ get_header();
                     $image_class = 'gallery_masonry';
                 break;
                 case 1:
-                    $image_class = 'gallery_masonry1';
+                    $image_class = 'gallery_masonry';
                 break;
                 case 2:
-                    $image_class = 'gallery_masonry2';
+                    $image_class = 'gallery_masonry';
                 break;
                 default:
                     $image_class = 'gallery_masonry';
                 break;	        			        			        		
             }
 ?>
-	<div class="element grid classic3_cols">
+	<div class="element grid classic2_cols">
 	
-		<div class="one_third gallery3 static filterable gallery_type animated<?php echo esc_attr($key+1); ?>" data-id="post-<?php echo esc_attr($key+1); ?>">
+		<div class="one_half gallery2 static filterable gallery_type animated<?php echo esc_attr($key+1); ?>" data-id="post-<?php echo esc_attr($key+1); ?>">
 		
 			<?php 
 			    if(has_post_thumbnail())
@@ -108,24 +108,3 @@ get_header();
 </div>
 <?php get_footer(); ?>
 <!-- End content -->
-
-<?php
-/*
-get_header();
-if ( $index_query->have_posts() ):
-  while ( $index_query->have_posts() ):
-    $index_query->the_post();
-    echo '<a href="'.get_post_permalink().'">';
-    the_post_thumbnail( array( 100, 100 ) );
-    echo '</a>';
-    echo the_title();
-  endwhile;
-endif;
-
-
-
-wp_reset_postdata();
-get_footer();
-
-
-*/

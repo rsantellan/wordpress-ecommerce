@@ -117,7 +117,7 @@ if(empty($page_show_title))
 <div id="page_content_wrapper" <?php if(!empty($pp_page_bg)) { ?>class="hasbg"<?php } ?>>
     <div class="inner ">
     	<!-- Begin main content -->
-    	<div class="inner_wrapper">
+    	<div class="inner_wrapper no-top-padding">
     		<div class="sidebar_content <?php if(empty($page_sidebar)) { ?>full_width<?php } else { ?>left_sidebar<?php } ?>">
 				
 				<?php woocommerce_content();  ?>

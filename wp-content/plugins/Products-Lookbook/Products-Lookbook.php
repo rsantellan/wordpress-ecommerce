@@ -19,6 +19,11 @@ add_action( 'save_post', 'add_product_associations_fields', 10, 2 );
 
 add_filter( 'template_include', 'include_template_function', 1 );
 
+/*
+add_action( 'show_user_profile', 'extra_profile_fields', 10 );
+*/
+add_action( 'edit_user_profile', 'extra_profile_fields', 10 );
+
 /**
  * 
  * Register post type hook
@@ -171,3 +176,56 @@ function include_template_function( $template_path ) {
     }
     return $template_path;
 }
+
+// Function for adding fields
+function extra_profile_fields( $user ) { 
+
+  ?>
+<div class="hide_on_frontend">
+ <h3><?php _e('Extra Profile Fields', 'frontendprofile'); ?></h3>
+ <table class="form-table">
+ <tr>
+   <th><label for="gplus">Altura</label></th>
+   <td>
+      <?php echo esc_attr( get_user_meta( $user->ID, 'sizeheight', true) ); ?>
+   </td>
+ </tr>
+ 
+ </table>
+ </div>
+<?php } // Function body ends
+
+
+
+ wp_enqueue_script( 'my-ajax-handle', plugin_dir_url( __FILE__ ) . 'assets/js/ajax.js', array( 'jquery' ) );
+ wp_localize_script( 'my-ajax-handle', 'the_ajax_script', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+ // THE AJAX ADD ACTIONS
+ add_action( 'wp_ajax_update_user_extra_data', 'the_action_function' );
+ //add_action( 'wp_ajax_nopriv_the_ajax_hook', 'the_action_function' ); // need this to serve non logged in users
+ // THE FUNCTION
+ function the_action_function(){
+  $loggedUser = wp_get_current_user();
+  $returnData = array();
+  if(!$loggedUser)
+  {
+    $returnData['message'] = 'No estas logueado, vuelve a loguearte para editar tus datos';
+  }
+  else
+  {
+    $return = update_usermeta( $loggedUser->ID, 'sizeheight', $_POST['sizeheight'] );
+    $returnData['message'] = 'Datos actualizados con exito.';
+  }
+  echo json_encode($returnData);
+  die();
+ }
+
+ // ADD EG A FORM TO THE PAGE
+ function user_extra_information_frontend(){
+   $template_path = plugin_dir_path( __FILE__ ) . 'templates/_extradataform.php';
+   ob_start();
+   include_once($template_path);
+   $form = ob_get_contents();
+   ob_end_clean();
+   return $form;
+ }
+ add_shortcode("extra_user_information_form", "user_extra_information_frontend");
